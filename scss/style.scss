@@ -73,7 +73,8 @@ h1 {
 p {
     font-size: 1.4rem;
     line-height: 1.6rem;
-    font-weight: 400;
+    font-weight: 500;
+    text-indent: 15px;
 }
 
 a {
@@ -481,6 +482,7 @@ header {
                             font-size: 1.7rem;
                             color: var(--heading-color-2);
                             margin-top: 20px;
+                            text-align: center;
                         }
                         p {
                             font-size: 1rem;
@@ -712,6 +714,34 @@ header {
     }
 }
 
+//svg animacija
+// .proba {
+//     background-color: grey;
+//     svg {
+//         #right-eye {
+//             stroke-width: 8;
+//             stroke: var(--font-color);
+//             fill: none;
+//             stroke-dasharray: 1286;
+//             stroke-dashoffset: 1286;
+//             animation-duration: 2s, 10s;
+//             animation-fill-mode: forwards, forwards;
+//             animation-delay: 5s, 10s;
+//             animation-name: draw, fill;
+//         }
+//         @keyframes draw {
+//             to {
+//                 stroke-dashoffset: 0;
+//                 stroke-dasharray: 0;
+//             }
+//         }
+//         @keyframes fill {
+//             to {
+//                 fill: var(--heading-color);
+//             }
+//         }
+//     }
+// }
 .profile {
     padding: 20px 0;
     margin-top: 100px;

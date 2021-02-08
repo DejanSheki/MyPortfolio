@@ -54,7 +54,8 @@ h1 {
 p {
   font-size: 1.4rem;
   line-height: 1.6rem;
-  font-weight: 400;
+  font-weight: 500;
+  text-indent: 15px;
 }
 
 a {
@@ -506,6 +507,7 @@ header h2 {
   font-size: 1.7rem;
   color: var(--heading-color-2);
   margin-top: 20px;
+  text-align: center;
 }
 .projects .path-wrap .clip-path .clip-path-container .container article p {
   font-size: 1rem;
