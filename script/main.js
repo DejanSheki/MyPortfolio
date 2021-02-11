@@ -126,44 +126,6 @@ function installMediaQueryWatcher(mediaQuery, layoutChangedCallback) {
     layoutChangedCallback(mql.matches);
 }
 
-
-/* scrollTrigger */
-
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.to('.jump', {
-    scrollTrigger: {
-        trigger: '.jump',
-        toggleActions: 'play complete pause reset',
-    },
-    opacity: 1,
-    y: '0%',
-    duration: 2,
-    ease: 'back.out(4)'
-});
-gsap.to('.jump-2', {
-    scrollTrigger: {
-        trigger: '.jump-2',
-        toggleActions: 'play complete pause reset'
-    },
-    opacity: 1,
-    y: '0%',
-    duration: 2,
-    ease: 'back.out(4)'
-});
-gsap.to('.jump-3', {
-    scrollTrigger: {
-        trigger: '.jump-3',
-        // start: 'bottom',
-        toggleActions: 'play complete pause reset'
-    },
-    opacity: 1,
-    y: '0%',
-    duration: 2,
-    ease: 'back.out(4)'
-});
-
-
 /* sticky nav */
 
 $(document).ready(function() {

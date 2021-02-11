@@ -333,11 +333,28 @@ nav {
     transform: translateY(100%);
 }
 
-.jump,
-.jump-2,
-.jump-3 {
+.jump {
     transform: translateY(150%);
     opacity: 0;
+}
+
+.jump-appear {
+    // transform: translateY(0%);
+    animation: jumpApp 1s ease-out forwards;
+    // transition: 1s ease-out;
+}
+
+@keyframes jumpApp {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(15%);
+        opacity: 1;
+    }
 }
 
 
@@ -531,6 +548,43 @@ header {
 
 /*** skills ***/
 
+.graphic-up {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: nesto2 3s ease-in-out forwards;
+    stroke: var(--heading-color);
+    stroke-width: 8px;
+    stroke-linecap: round;
+    fill: none;
+    /* display: none; */
+}
+
+.graphic-left {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: nesto2 3s ease-in-out forwards;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    stroke: var(--heading-color);
+    stroke-width: 8px;
+    stroke-linecap: round;
+    fill: none;
+    /* display: none; */
+}
+
+.nevidljivo {
+    opacity: 0;
+}
+
+@keyframes nesto2 {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
 .skills {
     padding: 20px 0;
     margin-top: 100px;
@@ -564,6 +618,7 @@ header {
             }
             .clip-path-container {
                 background: var(--bg-color);
+                padding: 110px 0 20px 0;
                 clip-path: polygon(28% 8%, 72% 8%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
                 @media (max-width: 768px) {
                     clip-path: polygon(28% 4%, 72% 4%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
@@ -572,113 +627,85 @@ header {
                     clip-path: polygon(28% 2%, 72% 2%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
                 }
                 .container {
-                    article {
-                        @include flex(center,
-                        stretch);
-                        overflow: hidden;
-                        background: var(--bg-color-2);
-                        padding: 20px;
-                        margin-bottom: 20px;
-                        .chart {
-                            margin: 20px 20px 50px 20px;
-                            &::after {
-                                content: "HTML";
-                                display: block;
-                                top: 5%;
+                    @include flex(space-around,
+                    center);
+                    background: var(--bg-color-2);
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    article:nth-child(1) {
+                        flex: 0 0 30%;
+                        .graphic {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+                            .program {
+                                color: var(--heading-color-2);
                                 position: relative;
-                                left: 21%;
-                                font-size: 1.9rem;
-                                font-family: $fontFamily;
-                                font-weight: 700;
-                                @media (max-width: 768px) {
-                                    font-size: 1.6rem;
-                                    left: 27%;
-                                }
+                                top: 112px;
+                                right: 24%;
+                                font-size: 2rem;
                             }
                             .percent {
                                 position: relative;
-                                top: 40%;
-                                left: 31%;
-                                font-size: 1.8rem;
-                                font-weight: 600;
-                                color: var(--font-color);
+                                color: var(--heading-color-2);
+                                font-size: 2rem;
+                                bottom: 122px;
+                                left: 27%;
                             }
                         }
-                        .chartcss {
-                            margin: 20px 20px 50px 20px;
-                            &::after {
-                                content: "CSS";
-                                display: block;
-                                top: 5%;
+                    }
+                    article:nth-child(2) {
+                        flex: 0 0 30%;
+                        .graphic {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+                            .program {
+                                color: var(--heading-color-2);
                                 position: relative;
-                                left: 25%;
-                                font-size: 1.9rem;
-                                font-family: $fontFamily;
-                                font-weight: 700;
-                                @media (max-width: 768px) {
-                                    font-size: 1.6rem;
-                                    left: 30%;
-                                }
+                                top: 112px;
+                                right: 24%;
+                                font-size: 2rem;
                             }
                             .percent {
                                 position: relative;
-                                top: 40%;
-                                left: 31%;
-                                font-size: 1.8rem;
-                                font-weight: 600;
-                                color: var(--font-color);
+                                color: var(--heading-color-2);
+                                font-size: 2rem;
+                                bottom: 122px;
+                                left: 27%;
                             }
                         }
-                        .chartphp {
-                            margin: 20px 20px 50px 20px;
-                            &::after {
-                                content: "PHP";
-                                display: block;
-                                top: 5%;
+                    }
+                    article:nth-child(3) {
+                        flex: 0 0 30%;
+                        .graphic {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+                            .program {
+                                color: var(--heading-color-2);
                                 position: relative;
-                                left: 25%;
-                                font-size: 1.9rem;
-                                font-family: $fontFamily;
-                                font-weight: 700;
-                                @media (max-width: 768px) {
-                                    font-size: 1.6rem;
-                                    left: 30%;
-                                }
+                                top: 112px;
+                                right: 24%;
+                                font-size: 2rem;
                             }
                             .percent {
                                 position: relative;
-                                top: 40%;
-                                left: 31%;
-                                font-size: 1.8rem;
-                                font-weight: 600;
-                                color: var(--font-color);
+                                color: var(--heading-color-2);
+                                font-size: 2rem;
+                                bottom: 122px;
+                                left: 27%;
                             }
                         }
-                        .chartjs {
-                            margin: 20px 20px 50px 20px;
-                            &::after {
-                                content: "JavaScript";
-                                display: block;
-                                top: 5%;
-                                position: relative;
-                                left: 0;
-                                font-size: 1.9rem;
-                                font-family: $fontFamily;
-                                font-weight: 700;
-                                @media (max-width: 768px) {
-                                    font-size: 1.6rem;
-                                    left: 4%;
-                                }
-                            }
-                            .percent {
-                                position: relative;
-                                top: 40%;
-                                left: 31%;
-                                font-size: 1.8rem;
-                                font-weight: 600;
-                                color: var(--font-color);
-                            }
-                        }
+                    }
+                    article:nth-child(4) {
+                        flex: 0 0 100%;
                         p {
                             padding: 20px;
                             letter-spacing: 1px;
@@ -714,34 +741,6 @@ header {
     }
 }
 
-//svg animacija
-// .proba {
-//     background-color: grey;
-//     svg {
-//         #right-eye {
-//             stroke-width: 8;
-//             stroke: var(--font-color);
-//             fill: none;
-//             stroke-dasharray: 1286;
-//             stroke-dashoffset: 1286;
-//             animation-duration: 2s, 10s;
-//             animation-fill-mode: forwards, forwards;
-//             animation-delay: 5s, 10s;
-//             animation-name: draw, fill;
-//         }
-//         @keyframes draw {
-//             to {
-//                 stroke-dashoffset: 0;
-//                 stroke-dasharray: 0;
-//             }
-//         }
-//         @keyframes fill {
-//             to {
-//                 fill: var(--heading-color);
-//             }
-//         }
-//     }
-// }
 .profile {
     padding: 20px 0;
     margin-top: 100px;
@@ -843,10 +842,10 @@ footer {
                 left: 38px;
                 font-size: 1.7rem;
                 font-weight: 100;
-                bottom: 73px;
-                @media (max-width: 360px) {
-                    font-size: 1.2rem;
-                    bottom: 64px;
+                bottom: 57px;
+                @media (max-width: 3768px) {
+                    font-size: 1rem;
+                    bottom: 50px;
                 }
             }
             svg {
