@@ -1,21 +1,21 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Nova+Square&display=swap");
 :root {
-  --primary-color: #586998;
-  --font-color: #0c0c21;
-  --bg-color: #eaeaea;
-  --bg-color-2: #dbdee8;
-  --heading-color: #4170fc;
-  --heading-color-2: #0d2542;
-}
-
-[data-theme=dark] {
   --primary-color: #cad0f3;
   --font-color: #b1b1b4;
   --bg-color: #060c0f;
   --bg-color-2: #0b1019;
   --heading-color: #0072fa;
   --heading-color-2: #9ea6d4;
+}
+
+[data-theme=dark] {
+  --primary-color: #586998;
+  --font-color: #0c0c21;
+  --bg-color: #eaeaea;
+  --bg-color-2: #dbdee8;
+  --heading-color: #4170fc;
+  --heading-color-2: #0d2542;
 }
 
 * {
@@ -349,7 +349,7 @@ nav .bars-open .bar:nth-child(3) {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(15%);
+    transform: translateY(15%) scale(1.3);
     opacity: 1;
   }
 }
@@ -410,6 +410,7 @@ header h2 {
 .projects {
   padding: 20px 0;
   margin-top: 100px;
+  overflow: hidden;
 }
 .projects h1 {
   font-family: "Nova Square", cursive;
@@ -565,8 +566,8 @@ header h2 {
 .graphic-up {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: nesto2 3s ease-in-out forwards;
-  stroke: var(--heading-color);
+  animation: draw 3s ease-in-out forwards;
+  stroke: #0900ff;
   stroke-width: 8px;
   stroke-linecap: round;
   fill: none;
@@ -576,21 +577,21 @@ header h2 {
 .graphic-left {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: nesto2 3s ease-in-out forwards;
+  animation: draw 3s ease-in-out forwards;
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
-  stroke: var(--heading-color);
+  stroke: #0900ff;
   stroke-width: 8px;
   stroke-linecap: round;
   fill: none;
   /* display: none; */
 }
 
-.nevidljivo {
+.invisible {
   opacity: 0;
 }
 
-@keyframes nesto2 {
+@keyframes draw {
   0% {
     stroke-dashoffset: 500;
   }
@@ -598,9 +599,43 @@ header h2 {
     stroke-dashoffset: 0;
   }
 }
+@keyframes languageEffect {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+    color: #0900ff;
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(0.8);
+    opacity: 1;
+    color: #0900ff;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.languageAppear {
+  color: var(--heading-color-2);
+  position: relative;
+  top: 112px;
+  right: 24%;
+  font-size: 2rem;
+  animation: languageEffect 1.5s forwards ease-out;
+}
+
 .skills {
   padding: 20px 0;
   margin-top: 100px;
+  overflow: hidden;
 }
 .skills h1 {
   font-family: "Nova Square", cursive;
@@ -676,11 +711,11 @@ header h2 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) .graphic .program {
+.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) .graphic .language {
   color: var(--heading-color-2);
   position: relative;
   top: 112px;
-  right: 24%;
+  right: 22%;
   font-size: 2rem;
 }
 .skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) .graphic .percent {
@@ -700,11 +735,11 @@ header h2 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) .graphic .program {
+.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) .graphic .language {
   color: var(--heading-color-2);
   position: relative;
   top: 112px;
-  right: 24%;
+  right: 22%;
   font-size: 2rem;
 }
 .skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) .graphic .percent {
@@ -724,7 +759,7 @@ header h2 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(3) .graphic .program {
+.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(3) .graphic .language {
   color: var(--heading-color-2);
   position: relative;
   top: 112px;
@@ -782,6 +817,7 @@ header h2 {
 .profile {
   padding: 20px 0;
   margin-top: 100px;
+  overflow: hidden;
 }
 .profile h1 {
   font-family: "Nova Square", cursive;
@@ -856,6 +892,20 @@ header h2 {
   border-radius: 50%;
   width: 100%;
 }
+.profile .path-wrap .clip-path .clip-path-container .container article .image img:hover {
+  animation: borderincrease 1s ease-in-out;
+}
+@keyframes borderincrease {
+  0% {
+    border: 8px solid #0677ff;
+  }
+  50% {
+    border: 12px solid #0677ff;
+  }
+  100% {
+    border: 8px solid #0677ff;
+  }
+}
 .profile .path-wrap .clip-path .clip-path-container .container article .text {
   padding: 50px 20px 20px 20px;
   flex: 0 0 60%;
@@ -901,7 +951,7 @@ footer .logodiv .logo::after {
   font-weight: 100;
   bottom: 57px;
 }
-@media (max-width: 3768px) {
+@media (max-width: 768px) {
   footer .logodiv .logo::after {
     font-size: 1rem;
     bottom: 50px;
@@ -938,7 +988,7 @@ footer .iconsdiv a {
 }
 footer .iconsdiv a:hover {
   color: #0677ff;
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(360deg);
   transition: 1s ease;
   border: none;
 }
