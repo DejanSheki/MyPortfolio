@@ -101,7 +101,7 @@ const objPhp = document.getElementById("value-php");
 function scrollanimateValue() {
     var element = document.querySelector('#value-html').getBoundingClientRect();
     var screenPosition = window.innerHeight / 1;
-    var screenPosition2 = window.innerHeight / 1.03;
+    var screenPosition2 = window.innerHeight / 1.1;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
         animateValue(obj, 0, 90, 1500);
@@ -112,7 +112,7 @@ window.addEventListener('scroll', scrollanimateValue, { passive: true });
 function scrollanimateValueJs() {
     var element = document.querySelector('#value-js').getBoundingClientRect();
     var screenPosition = window.innerHeight / 1;
-    var screenPosition2 = window.innerHeight / 1.03;
+    var screenPosition2 = window.innerHeight / 1.1;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
         animateValue(objJs, 0, 60, 1500);
@@ -123,7 +123,7 @@ window.addEventListener('scroll', scrollanimateValueJs, { passive: true });
 function scrollanimateValuePhp() {
     var element = document.querySelector('#value-php').getBoundingClientRect();
     var screenPosition = window.innerHeight / 1;
-    var screenPosition2 = window.innerHeight / 1.03;
+    var screenPosition2 = window.innerHeight / 1.1;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
         animateValue(objPhp, 0, 55, 1500);
@@ -146,7 +146,7 @@ function scrollLanguageBlinding() {
     });
 
     for (var i = 0; i < elements.length; i++) {
-        var screenPosition = window.innerHeight / 1.1;
+        var screenPosition = window.innerHeight / 1.3;
 
         if (elements[i].getBoundingClientRect().top < screenPosition) {
             elements[i].classList.add('languageAppear');
