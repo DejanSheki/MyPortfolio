@@ -100,8 +100,8 @@ const objPhp = document.getElementById("value-php");
 
 function scrollanimateValue() {
     var element = document.querySelector('#value-html').getBoundingClientRect();
-    var screenPosition = window.innerHeight / 1;
-    var screenPosition2 = window.innerHeight / 1.1;
+    var screenPosition = window.innerHeight / 1 + 60;
+    var screenPosition2 = window.innerHeight / 1.1 + 40;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
         animateValue(obj, 0, 90, 1500);
@@ -111,10 +111,12 @@ window.addEventListener('scroll', scrollanimateValue, { passive: true });
 
 function scrollanimateValueJs() {
     var element = document.querySelector('#value-js').getBoundingClientRect();
-    var screenPosition = window.innerHeight / 1;
-    var screenPosition2 = window.innerHeight / 1.1;
+    var screenPosition = window.innerHeight / 1 + 60;
+    var screenPosition2 = window.innerHeight / 1.1 + 40;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
+        console.log(screenPosition);
+        console.log(screenPosition2);
         animateValue(objJs, 0, 60, 1500);
     }
 }
@@ -122,8 +124,8 @@ window.addEventListener('scroll', scrollanimateValueJs, { passive: true });
 
 function scrollanimateValuePhp() {
     var element = document.querySelector('#value-php').getBoundingClientRect();
-    var screenPosition = window.innerHeight / 1;
-    var screenPosition2 = window.innerHeight / 1.1;
+    var screenPosition = window.innerHeight / 1 + 60;
+    var screenPosition2 = window.innerHeight / 1.1 + 40;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
         animateValue(objPhp, 0, 55, 1500);

@@ -779,6 +779,7 @@ header {
     }
 }
 
+//profile
 .profile {
     padding: 20px 0;
     margin-top: 100px;
@@ -834,22 +835,16 @@ header {
                                 margin: 0 auto;
                             }
                             img {
-                                border: 8px solid $blueSecondary;
+                                // border: 8px solid $blueSecondary;
                                 border-radius: 50%;
+                                box-shadow: 0px 0px 0px 4px $blueSecondary;
+                                transition: box-shadow 0.3s linear;
+                                filter: grayscale(70%);
+                                margin: 0.5em;
                                 width: 100%;
                                 &:hover {
-                                    animation: borderincrease 1s ease-in-out;
-                                }
-                                @keyframes borderincrease {
-                                    0% {
-                                        border: 8px solid $blueSecondary;
-                                    }
-                                    50% {
-                                        border: 12px solid $blueSecondary;
-                                    }
-                                    100% {
-                                        border: 8px solid $blueSecondary;
-                                    }
+                                    box-shadow: 0px 0px 0px 9px $blueSecondary;
+                                    filter: grayscale(0%);
                                 }
                             }
                         }

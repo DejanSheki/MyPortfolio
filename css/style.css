@@ -888,23 +888,16 @@ header h2 {
   }
 }
 .profile .path-wrap .clip-path .clip-path-container .container article .image img {
-  border: 8px solid #0677ff;
   border-radius: 50%;
+  box-shadow: 0px 0px 0px 4px #0677ff;
+  transition: box-shadow 0.3s linear;
+  filter: grayscale(70%);
+  margin: 0.5em;
   width: 100%;
 }
 .profile .path-wrap .clip-path .clip-path-container .container article .image img:hover {
-  animation: borderincrease 1s ease-in-out;
-}
-@keyframes borderincrease {
-  0% {
-    border: 8px solid #0677ff;
-  }
-  50% {
-    border: 12px solid #0677ff;
-  }
-  100% {
-    border: 8px solid #0677ff;
-  }
+  box-shadow: 0px 0px 0px 9px #0677ff;
+  filter: grayscale(0%);
 }
 .profile .path-wrap .clip-path .clip-path-container .container article .text {
   padding: 50px 20px 20px 20px;
