@@ -80,6 +80,81 @@ a:hover {
   }
 }
 
+/** preload **/
+.preload {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #060c0f;
+  z-index: 999;
+  transition: opacity 1s ease-in-out 4s;
+}
+
+.preload-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preload-velika-crta {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: preloadLogoVelika 3s ease-in forwards, preloadOpacity 4s ease-out forwards;
+  stroke: #0c47eb;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.preload-mala-crta {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: preloadLogoMala 3s ease-in forwards, preloadOpacity 4s ease-out forwards;
+  stroke: #0c47eb;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+@keyframes preloadLogoMala {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes preloadLogoVelika {
+  0% {
+    stroke-dashoffset: 800;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+@keyframes preloadOpacity {
+  0% {
+    fill-opacity: 0;
+  }
+  25% {
+    fill-opacity: 0;
+  }
+  50% {
+    fill-opacity: 0;
+  }
+  75% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
 /*** nav ***/
 .stickyAdd {
   padding: 20px 110px;
@@ -285,53 +360,6 @@ nav .bars-open .bar:nth-child(3) {
   }
 }
 
-/*** intro ***/
-.intro {
-  background: #060c0f;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-.intro .intro-text {
-  color: #0677ff;
-}
-.intro .intro-text h2 {
-  font-family: "Nova Square", cursive;
-  font-size: 4rem;
-  font-weight: 100;
-  font-style: italic;
-}
-@media (max-width: 768px) {
-  .intro .intro-text h2 {
-    font-size: 2rem;
-  }
-}
-.intro .hide {
-  background: #060c0f;
-  overflow: hidden;
-  padding-right: 20px;
-}
-.intro .hide span {
-  transform: translateY(100%);
-  display: inline-block;
-}
-
-.slider {
-  background: #060c0f;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(100%);
-}
-
 .jump {
   transform: translateY(150%);
   opacity: 0;
@@ -354,6 +382,34 @@ nav .bars-open .bar:nth-child(3) {
   }
 }
 /*** welcome header ***/
+.welcome-text-trans {
+  transform: translateX(500%);
+}
+
+.welcome-text-d-trans {
+  transform: translateX(-500%);
+}
+
+.welcome-text-add {
+  transform: translateX(0%);
+  transition: transform 1.2s ease-in-out;
+}
+@media (max-width: 768px) {
+  .welcome-text-add {
+    transform: translate(0%, -15px);
+  }
+}
+
+.welcome-text-d-add {
+  transform: translate(56%, -7px);
+  transition: transform 1.2s ease-in-out;
+}
+@media (max-width: 768px) {
+  .welcome-text-d-add {
+    transform: translate(38%, -11px);
+  }
+}
+
 header {
   height: 80vh;
   background-image: url(../img/header7.png);
@@ -373,24 +429,22 @@ header {
 }
 header .welcome-text {
   font-size: 4.5rem;
-  transform: translateX(500%);
   position: relative;
   z-index: -1;
 }
 @media (max-width: 768px) {
   header .welcome-text {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 }
 header .welcome-text-d {
   font-size: 3rem;
-  transform: translateX(-500%);
   position: relative;
   z-index: -1;
 }
 @media (max-width: 768px) {
   header .welcome-text-d {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 header h1 {
@@ -659,129 +713,114 @@ header h2 {
     top: 32px;
   }
 }
-.skills .path-wrap {
-  filter: drop-shadow(0px 0px 3px var(--font-color));
-}
-.skills .path-wrap .clip-path {
-  background: var(--heading-color);
-  clip-path: polygon(28% 8%, 72% 8%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  padding-top: 2px;
-}
-@media (max-width: 768px) {
-  .skills .path-wrap .clip-path {
-    clip-path: polygon(28% 4%, 72% 4%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  }
-}
-@media (max-width: 500px) {
-  .skills .path-wrap .clip-path {
-    clip-path: polygon(28% 2%, 72% 2%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  }
-}
-.skills .path-wrap .clip-path .clip-path-container {
-  background: var(--bg-color);
-  padding: 110px 0 20px 0;
-  clip-path: polygon(28% 8%, 72% 8%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
-}
-@media (max-width: 768px) {
-  .skills .path-wrap .clip-path .clip-path-container {
-    clip-path: polygon(28% 4%, 72% 4%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  }
-}
-@media (max-width: 500px) {
-  .skills .path-wrap .clip-path .clip-path-container {
-    clip-path: polygon(28% 2%, 72% 2%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  }
-}
-.skills .path-wrap .clip-path .clip-path-container .container {
+.skills .container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   background: var(--bg-color-2);
-  padding: 20px;
+  padding: 110px 0 20px 0;
   margin-bottom: 20px;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) {
+.skills .container article:nth-child(1) {
   flex: 0 0 30%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) .graphic {
+.skills .container article:nth-child(1) .graphic {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) .graphic .language {
+@media (min-width: 1600px) {
+  .skills .container article:nth-child(1) .graphic svg {
+    width: 440px;
+    height: 440px;
+  }
+}
+.skills .container article:nth-child(1) .graphic .language {
   color: var(--heading-color-2);
   position: relative;
   top: 112px;
   right: 22%;
   font-size: 2rem;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(1) .graphic .percent {
+.skills .container article:nth-child(1) .graphic .percent {
   position: relative;
   color: var(--heading-color-2);
   font-size: 2rem;
   bottom: 122px;
   left: 27%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) {
+.skills .container article:nth-child(2) {
   flex: 0 0 30%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) .graphic {
+.skills .container article:nth-child(2) .graphic {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) .graphic .language {
+@media (min-width: 1600px) {
+  .skills .container article:nth-child(2) .graphic svg {
+    width: 440px;
+    height: 440px;
+  }
+}
+.skills .container article:nth-child(2) .graphic .language {
   color: var(--heading-color-2);
   position: relative;
   top: 112px;
   right: 22%;
   font-size: 2rem;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(2) .graphic .percent {
+.skills .container article:nth-child(2) .graphic .percent {
   position: relative;
   color: var(--heading-color-2);
   font-size: 2rem;
   bottom: 122px;
   left: 27%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(3) {
+.skills .container article:nth-child(3) {
   flex: 0 0 30%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(3) .graphic {
+.skills .container article:nth-child(3) .graphic {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(3) .graphic .language {
+@media (min-width: 1600px) {
+  .skills .container article:nth-child(3) .graphic svg {
+    width: 440px;
+    height: 440px;
+  }
+}
+.skills .container article:nth-child(3) .graphic .language {
   color: var(--heading-color-2);
   position: relative;
   top: 112px;
   right: 24%;
   font-size: 2rem;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(3) .graphic .percent {
+.skills .container article:nth-child(3) .graphic .percent {
   position: relative;
   color: var(--heading-color-2);
   font-size: 2rem;
   bottom: 122px;
   left: 27%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) {
+.skills .container article:nth-child(4) {
   flex: 0 0 100%;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) p {
+.skills .container article:nth-child(4) p {
   padding: 20px;
   letter-spacing: 1px;
   text-align: center;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) .icons {
+.skills .container article:nth-child(4) .icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -791,25 +830,25 @@ header h2 {
   color: var(--heading-color-2);
 }
 @media (max-width: 768px) {
-  .skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) .icons {
+  .skills .container article:nth-child(4) .icons {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) .icons i {
+.skills .container article:nth-child(4) .icons i {
   margin: 20px;
 }
 @media (max-width: 768px) {
-  .skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) .icons i {
+  .skills .container article:nth-child(4) .icons i {
     flex: 0 0 20%;
   }
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) .icons .svgs {
+.skills .container article:nth-child(4) .icons .svgs {
   margin: 20px;
 }
-.skills .path-wrap .clip-path .clip-path-container .container article:nth-child(4) .icons svg {
+.skills .container article:nth-child(4) .icons svg {
   width: 58px;
   fill: var(--heading-color-2);
 }
