@@ -14,7 +14,7 @@ window.onload = function loadFrame() {
         wlctxd.classList.add("welcome-text-d-add");
         wlctxd.classList.remove("welcome-text-d-trans");
 
-    }, 5000)
+    }, 4000)
 };
 
 //hamburger
@@ -70,75 +70,6 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
-
-//green sock
-// const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
-
-// tl.to('.text', {
-//     y: '0%',
-//     duration: 1.1,
-//     stagger: 1,
-//     ease: 'back'
-// });
-
-// tl.fromTo('nav', {
-//     opacity: 0
-// }, {
-//     opacity: 1,
-//     duration: 0.8
-// });
-
-
-/* media Query */
-// const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
-// installMediaQueryWatcher("(min-width: 768px)", function(matches) {
-
-//     if (matches) {
-//         tl.to('.welcome-text', {
-//                 x: '0%',
-//                 y: '-15px',
-//                 delay: 7,
-//                 duration: 1.5,
-//                 stagger: 1,
-//                 ease: 'back',
-//             },
-//             '-=1');
-//         tl.to('.welcome-text-d', {
-//                 x: '59%',
-//                 y: '-25px',
-//                 // delay: 4,
-//                 duration: 1.5,
-//                 stagger: 1,
-//                 ease: 'back.out(1.2)'
-//             },
-//             '-=1');
-//     } else {
-//         tl.to('.welcome-text', {
-//                 x: '0%',
-//                 y: '0px',
-//                 delay: 7,
-//                 duration: 1.5,
-//                 stagger: 1,
-//                 ease: 'back',
-//             },
-//             '-=1');
-//         tl.to('.welcome-text-d', {
-//                 x: '50%',
-//                 y: '-7px',
-//                 // delay: 4,
-//                 duration: 1.5,
-//                 stagger: 1,
-//                 ease: 'back.out(1.2)'
-//             },
-//             '-=1');
-//     }
-// });
-
-// function installMediaQueryWatcher(mediaQuery, layoutChangedCallback) {
-//     var mql = window.matchMedia(mediaQuery);
-//     mql.addListener(function(e) { return layoutChangedCallback(e.matches); });
-//     layoutChangedCallback(mql.matches);
-// }
 
 /* sticky nav */
 

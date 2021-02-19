@@ -53,7 +53,7 @@ function scrollLineAppear() {
 window.addEventListener('scroll', scrollLineAppear, { passive: true });
 
 
-//scroll effects
+//scroll heading jump
 
 function scrollJumpAppear() {
     var elements = document.querySelectorAll('.jump'),
@@ -115,8 +115,6 @@ function scrollanimateValueJs() {
     var screenPosition2 = window.innerHeight / 1.1 + 40;
 
     if (element.top < screenPosition && element.top > screenPosition2) {
-        console.log(screenPosition);
-        console.log(screenPosition2);
         animateValue(objJs, 0, 60, 1500);
     }
 }
@@ -158,3 +156,53 @@ function scrollLanguageBlinding() {
     }
 }
 window.addEventListener('scroll', scrollLanguageBlinding, { passive: true });
+
+// draw lines
+function scrollDrawLines() {
+    var elements = document.querySelectorAll('.line'),
+        positions = [];
+
+    Array.prototype.forEach.call(elements, function(el, index) {
+        var positionInfo = el.getBoundingClientRect();
+        var appearPosition = positionInfo.top;
+
+        positions.push(appearPosition);
+
+    });
+
+    for (var i = 0; i < elements.length; i++) {
+        var screenPosition = window.innerHeight / 1.1;
+
+        if (elements[i].getBoundingClientRect().top < screenPosition) {
+            elements[i].classList.add('drawline');
+        } else {
+            elements[i].classList.remove('drawline');
+        }
+    }
+}
+window.addEventListener('scroll', scrollDrawLines, { passive: true });
+
+
+function scrollDrawLinesFooter() {
+    var elements = document.querySelectorAll('.line-footer'),
+        positions = [];
+
+    Array.prototype.forEach.call(elements, function(el, index) {
+        var positionInfo = el.getBoundingClientRect();
+        var appearPosition = positionInfo.top;
+
+        positions.push(appearPosition);
+
+    });
+
+    for (var i = 0; i < elements.length; i++) {
+        var screenPosition = window.innerHeight / 1.1;
+
+        if (elements[i].getBoundingClientRect().top < screenPosition) {
+            elements[i].classList.add('drawlineFooter');
+        } else {
+            elements[i].classList.remove('drawlineFooter');
+        }
+    }
+}
+window.addEventListener('scroll', scrollDrawLinesFooter, { passive: true });

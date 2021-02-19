@@ -45,7 +45,7 @@ h1 {
     font-size: 2.5rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   h1 {
     font-size: 1.8rem;
   }
@@ -71,7 +71,7 @@ a:hover {
 .container {
   max-width: 75%;
   margin: 0 auto;
-  padding: 135px 20px 20px 20px;
+  padding: 100px 20px 20px 20px;
 }
 @media (max-width: 768px) {
   .container {
@@ -366,18 +366,18 @@ nav .bars-open .bar:nth-child(3) {
 }
 
 .jump-appear {
-  animation: jumpApp 1s ease-out forwards;
+  animation: jumpApp 1s ease-out forwards 0.4s;
 }
 
 @keyframes jumpApp {
   0% {
-    transform: translateY(100%);
+    transform: scale(0);
   }
   50% {
-    transform: translateY(0%);
+    transform: scale(1.2);
   }
   100% {
-    transform: translateY(15%) scale(1.3);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -471,67 +471,80 @@ header h2 {
   text-align: center;
   display: block;
   position: relative;
-  top: 50px;
+  top: 29px;
 }
 @media (max-width: 768px) {
   .projects h1 {
-    top: 37px;
+    top: 22px;
   }
 }
-.projects .path-wrap {
-  filter: drop-shadow(0px 0px 3px var(--font-color));
+@media (max-width: 480px) {
+  .projects h1 {
+    top: 16px;
+  }
 }
-.projects .path-wrap .clip-path {
+.projects .lines {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.projects .lines .line:first-child {
+  margin-right: 100px;
+  width: 0%;
+  height: 2px;
   background: var(--heading-color);
-  clip-path: polygon(28% 10%, 72% 10%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  padding-top: 2px;
+  position: relative;
 }
-@media (max-width: 768px) {
-  .projects .path-wrap .clip-path {
-    clip-path: polygon(28% 3%, 72% 3%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+@media (max-width: 1024px) {
+  .projects .lines .line:first-child {
+    margin: 0;
   }
 }
-.projects .path-wrap .clip-path .clip-path-container {
-  background: var(--bg-color);
-  clip-path: polygon(28% 10%, 72% 10%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
+.projects .lines .line:last-child {
+  margin-left: 100px;
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
 }
-@media (max-width: 768px) {
-  .projects .path-wrap .clip-path .clip-path-container {
-    clip-path: polygon(28% 3%, 72% 3%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+@media (max-width: 1024px) {
+  .projects .lines .line:last-child {
+    margin: 0;
   }
 }
-.projects .path-wrap .clip-path .clip-path-container .link {
+.projects .link {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: 20px;
 }
-.projects .path-wrap .clip-path .clip-path-container .link a {
+.projects .link a {
   text-decoration: none;
   border-bottom: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
-.projects .path-wrap .clip-path .clip-path-container .link a:hover {
+.projects .link a:hover {
   color: var(--font-color);
   transition: 1s ease;
 }
-.projects .path-wrap .clip-path .clip-path-container .link a:hover i {
+.projects .link a:hover i {
   transform: scale(1.4);
   color: #0677ff;
   transition: 0.2s;
 }
-.projects .path-wrap .clip-path .clip-path-container .link i {
+.projects .link i {
   font-size: 1.5rem;
 }
-.projects .path-wrap .clip-path .clip-path-container .container {
+.projects .container {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article {
+.projects .container article {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -543,15 +556,15 @@ header h2 {
   margin-bottom: 20px;
 }
 @media (max-width: 768px) {
-  .projects .path-wrap .clip-path .clip-path-container .container article {
+  .projects .container article {
     flex: 0 0 100%;
   }
 }
-.projects .path-wrap .clip-path .clip-path-container .container article img {
+.projects .container article img {
   width: 100%;
   border: 3px solid #060c0f;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article .icons {
+.projects .container article .icons {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -559,54 +572,54 @@ header h2 {
   padding: 10px;
   width: 100%;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article .icons i {
+.projects .container article .icons i {
   font-size: 1.5rem;
   color: #0677ff;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article .icons .fa-php {
+.projects .container article .icons .fa-php {
   font-size: 1.8rem;
   font-weight: 700;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article .icons svg {
+.projects .container article .icons svg {
   width: 30px;
   fill: #0677ff;
   margin-left: 5px;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article h3 {
+.projects .container article h3 {
   font-size: 1.7rem;
   color: var(--heading-color-2);
   margin-top: 20px;
   text-align: center;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article p {
+.projects .container article p {
   font-size: 1rem;
   color: var(--font-color);
   margin: 10px 0 0 0;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article i {
+.projects .container article i {
   font-size: 1.6rem;
   color: var(--primary-color);
   margin-left: 10px;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article .webcon {
+.projects .container article .webcon {
   margin-left: 0px;
 }
-.projects .path-wrap .clip-path .clip-path-container .container article a {
+.projects .container article a {
   margin-left: 100px;
   border-bottom: none;
   cursor: pointer;
 }
 @media (max-width: 768px) {
-  .projects .path-wrap .clip-path .clip-path-container .container article a {
+  .projects .container article a {
     margin-left: 65px;
   }
 }
-.projects .path-wrap .clip-path .clip-path-container .container article a:hover i {
+.projects .container article a:hover i {
   transform: scale(1.2);
   color: #0677ff;
   transition: 0.2s;
 }
-.projects .path-wrap .clip-path .clip-path-container .hiden-container {
+.projects .hiden-container {
   display: none;
   padding: 0 20px;
 }
@@ -686,6 +699,27 @@ header h2 {
   animation: languageEffect 1.5s forwards ease-out;
 }
 
+.drawline {
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
+  animation: draw-line 1s linear forwards;
+}
+
+@keyframes draw-line {
+  0% {
+    width: 0;
+    box-shadow: none;
+  }
+  50% {
+    width: 40%;
+  }
+  100% {
+    width: 30%;
+    box-shadow: 0px 0px 4px 0px var(--font-color);
+  }
+}
 .skills {
   padding: 20px 0;
   margin-top: 100px;
@@ -696,21 +730,46 @@ header h2 {
   text-align: center;
   display: block;
   position: relative;
-  top: 50px;
+  top: 29px;
 }
 @media (max-width: 768px) {
   .skills h1 {
-    top: 37px;
+    top: 22px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .skills h1 {
-    top: 28px;
+    top: 16px;
   }
 }
-@media (max-width: 400px) {
-  .skills h1 {
-    top: 32px;
+.skills .lines {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skills .lines .line:first-child {
+  margin-right: 100px;
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .skills .lines .line:first-child {
+    margin: 0;
+  }
+}
+.skills .lines .line:last-child {
+  margin-left: 100px;
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .skills .lines .line:last-child {
+    margin: 0;
   }
 }
 .skills .container {
@@ -719,8 +778,9 @@ header h2 {
   align-items: center;
   flex-wrap: wrap;
   background: var(--bg-color-2);
-  padding: 110px 0 20px 0;
+  padding: 0px 0 20px 0;
   margin-bottom: 20px;
+  margin-top: 100px;
 }
 .skills .container article:nth-child(1) {
   flex: 0 0 30%;
@@ -732,10 +792,16 @@ header h2 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1700px) {
   .skills .container article:nth-child(1) .graphic svg {
     width: 440px;
     height: 440px;
+  }
+}
+@media (min-width: 2700px) {
+  .skills .container article:nth-child(1) .graphic svg {
+    width: 580px;
+    height: 580px;
   }
 }
 .skills .container article:nth-child(1) .graphic .language {
@@ -762,10 +828,16 @@ header h2 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1700px) {
   .skills .container article:nth-child(2) .graphic svg {
     width: 440px;
     height: 440px;
+  }
+}
+@media (min-width: 2700px) {
+  .skills .container article:nth-child(2) .graphic svg {
+    width: 580px;
+    height: 580px;
   }
 }
 .skills .container article:nth-child(2) .graphic .language {
@@ -792,10 +864,16 @@ header h2 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1700px) {
   .skills .container article:nth-child(3) .graphic svg {
     width: 440px;
     height: 440px;
+  }
+}
+@media (min-width: 2700px) {
+  .skills .container article:nth-child(3) .graphic svg {
+    width: 580px;
+    height: 580px;
   }
 }
 .skills .container article:nth-child(3) .graphic .language {
@@ -863,46 +941,49 @@ header h2 {
   text-align: center;
   display: block;
   position: relative;
-  top: 50px;
+  top: 29px;
 }
 @media (max-width: 768px) {
   .profile h1 {
-    top: 37px;
+    top: 22px;
   }
 }
-.profile .path-wrap {
-  filter: drop-shadow(0px 0px 3px var(--font-color));
+@media (max-width: 480px) {
+  .profile h1 {
+    top: 16px;
+  }
 }
-.profile .path-wrap .clip-path {
+.profile .lines {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile .lines .line:first-child {
+  margin-right: 100px;
+  width: 0%;
+  height: 2px;
   background: var(--heading-color);
-  clip-path: polygon(28% 11%, 72% 11%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  padding-top: 2px;
+  position: relative;
 }
-@media (max-width: 768px) {
-  .profile .path-wrap .clip-path {
-    clip-path: polygon(28% 6%, 72% 6%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+@media (max-width: 1024px) {
+  .profile .lines .line:first-child {
+    margin: 0;
   }
 }
-@media (max-width: 500px) {
-  .profile .path-wrap .clip-path {
-    clip-path: polygon(28% 5%, 72% 5%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+.profile .lines .line:last-child {
+  margin-left: 100px;
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .profile .lines .line:last-child {
+    margin: 0;
   }
 }
-.profile .path-wrap .clip-path .clip-path-container {
-  background: var(--bg-color);
-  clip-path: polygon(28% 11%, 72% 11%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
-}
-@media (max-width: 768px) {
-  .profile .path-wrap .clip-path .clip-path-container {
-    clip-path: polygon(28% 6%, 72% 6%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  }
-}
-@media (max-width: 500px) {
-  .profile .path-wrap .clip-path .clip-path-container {
-    clip-path: polygon(28% 5%, 72% 5%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-  }
-}
-.profile .path-wrap .clip-path .clip-path-container .container article {
+.profile .container article {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -912,21 +993,21 @@ header h2 {
   margin: 0 auto 20px;
 }
 @media (max-width: 768px) {
-  .profile .path-wrap .clip-path .clip-path-container .container article {
+  .profile .container article {
     width: 100%;
   }
 }
-.profile .path-wrap .clip-path .clip-path-container .container article .image {
+.profile .container article .image {
   flex: 0 0 35%;
   padding: 15px;
 }
 @media (max-width: 768px) {
-  .profile .path-wrap .clip-path .clip-path-container .container article .image {
+  .profile .container article .image {
     flex: 0 0 70%;
     margin: 0 auto;
   }
 }
-.profile .path-wrap .clip-path .clip-path-container .container article .image img {
+.profile .container article .image img {
   border-radius: 50%;
   box-shadow: 0px 0px 0px 4px #0677ff;
   transition: box-shadow 0.3s linear;
@@ -934,38 +1015,75 @@ header h2 {
   margin: 0.5em;
   width: 100%;
 }
-.profile .path-wrap .clip-path .clip-path-container .container article .image img:hover {
+.profile .container article .image img:hover {
   box-shadow: 0px 0px 0px 9px #0677ff;
   filter: grayscale(0%);
 }
-.profile .path-wrap .clip-path .clip-path-container .container article .text {
+.profile .container article .text {
   padding: 50px 20px 20px 20px;
   flex: 0 0 60%;
   letter-spacing: 1px;
   text-align: center;
 }
 @media (max-width: 768px) {
-  .profile .path-wrap .clip-path .clip-path-container .container article .text {
+  .profile .container article .text {
     flex: 0 0 100%;
   }
 }
 
 /*** footer ***/
+.lines-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.lines-footer .line-footer {
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
+}
+
+.drawlineFooter {
+  width: 0%;
+  height: 2px;
+  background: var(--heading-color);
+  position: relative;
+  animation: draw-line-footer 1s linear forwards;
+}
+
+@keyframes draw-line-footer {
+  0% {
+    width: 0;
+    box-shadow: none;
+  }
+  100% {
+    width: 50%;
+    box-shadow: 0px 0px 4px 0px var(--font-color);
+  }
+}
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 50px;
   background: var(--bg-color);
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   footer {
-    padding: 40px 20px;
+    padding: 20px;
   }
 }
 footer .logodiv {
   display: flex;
+  flex: 0 0 18%;
+}
+@media (max-width: 1024px) {
+  footer .logodiv {
+    flex: 0 0 35%;
+  }
 }
 footer .logodiv .logo {
   border-bottom: none;
@@ -994,15 +1112,43 @@ footer .logodiv .logo svg {
   height: 50px;
   position: relative;
 }
+footer .copyright {
+  border-left: 1px solid var(--font-color);
+  border-right: 1px solid var(--font-color);
+  padding: 20px;
+  flex: 0 0 38%;
+}
+@media (max-width: 1024px) {
+  footer .copyright {
+    order: 2;
+    flex: 0 0 100%;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+footer .copyright p {
+  font-size: 1rem;
+  text-indent: 0;
+}
+footer .copyright a {
+  font-size: 1rem;
+}
+footer .copyright a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
 footer .iconsdiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  flex: 0 0 38%;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   footer .iconsdiv {
-    flex-direction: column;
+    flex: 0 0 55%;
   }
 }
 footer .iconsdiv a {
@@ -1011,7 +1157,6 @@ footer .iconsdiv a {
   transition: 1s ease;
   cursor: pointer;
   border: none;
-  margin: 0 20px;
 }
 @media (max-width: 768px) {
   footer .iconsdiv a {

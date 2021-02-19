@@ -65,7 +65,7 @@ h1 {
     @media (max-width: 768px) {
         font-size: 2.5rem;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 480px) {
         font-size: 1.8rem;
     }
 }
@@ -90,7 +90,7 @@ a {
 .container {
     max-width: 75%;
     margin: 0 auto;
-    padding: 135px 20px 20px 20px;
+    padding: 100px 20px 20px 20px;
     @media (max-width: 768px) {
         max-width: 90%;
         padding: 90px 20px 20px 20px;
@@ -376,19 +376,22 @@ nav {
 
 .jump-appear {
     // transform: translateY(0%);
-    animation: jumpApp 1s ease-out forwards;
+    animation: jumpApp 1s ease-out forwards .4s;
     // transition: 1s ease-out;
 }
 
 @keyframes jumpApp {
     0% {
-        transform: translateY(100%);
+        // transform: translateY(100%);
+        transform: scale(0);
     }
     50% {
-        transform: translateY(0%);
+        // transform: translateY(0%);
+        transform: scale(1.2);
     }
     100% {
-        transform: translateY(15%) scale(1.3);
+        // transform: translateY(15%) scale(1.3);
+        transform: scale(1);
         opacity: 1;
     }
 }
@@ -478,128 +481,137 @@ header {
         text-align: center;
         display: block;
         position: relative;
-        top: 50px;
+        top: 29px;
         @media (max-width: 768px) {
-            top: 37px;
+            top: 22px;
+        }
+        @media (max-width: 480px) {
+            top: 16px;
         }
     }
-    .path-wrap {
-        filter: drop-shadow(0px 0px 3px var(--font-color));
-        .clip-path {
+    .lines {
+        @include flex(space-between,
+        center);
+        .line:first-child {
+            margin-right: 100px;
+            width: 0%;
+            height: 2px;
             background: var(--heading-color);
-            clip-path: polygon(28% 10%, 72% 10%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-            padding-top: 2px;
-            @media (max-width: 768px) {
-                clip-path: polygon(28% 3%, 72% 3%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+            position: relative;
+            @media (max-width: 1024px) {
+                margin: 0;
             }
-            .clip-path-container {
-                background: var(--bg-color);
-                clip-path: polygon(28% 10%, 72% 10%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
-                @media (max-width: 768px) {
-                    clip-path: polygon(28% 3%, 72% 3%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-                }
-                .link {
-                    @include flex(center,
-                    center);
-                    padding-bottom: 20px;
-                    a {
-                        text-decoration: none;
-                        border-bottom: none;
-                        font-size: 1.5rem;
-                        cursor: pointer;
-                        &:hover {
-                            color: var(--font-color);
-                            transition: $transition;
-                            i {
-                                transform: scale(1.4);
-                                color: $blueSecondary;
-                                transition: .2s;
-                            }
-                        }
-                    }
-                    i {
-                        font-size: 1.5rem;
-                    }
-                }
-                .container {
-                    @include flex(space-between,
-                    stretch);
-                    article {
-                        @include flex(space-between,
-                        center);
-                        background: var(--bg-color-2);
-                        padding: 20px;
-                        flex-direction: column;
-                        flex: 0 0 32%;
-                        margin-bottom: 20px;
-                        @media (max-width: 768px) {
-                            flex: 0 0 100%;
-                        }
-                        img {
-                            width: 100%;
-                            border: 3px solid $darkBlue;
-                        }
-                        .icons {
-                            @include flex(flex-start,
-                            center);
-                            padding: 10px;
-                            width: 100%;
-                            i {
-                                font-size: 1.5rem;
-                                color: $blueSecondary;
-                            }
-                            .fa-php {
-                                font-size: 1.8rem;
-                                font-weight: 700;
-                            }
-                            svg {
-                                width: 30px;
-                                fill: $blueSecondary;
-                                margin-left: 5px;
-                            }
-                        }
-                        h3 {
-                            font-size: 1.7rem;
-                            color: var(--heading-color-2);
-                            margin-top: 20px;
-                            text-align: center;
-                        }
-                        p {
-                            font-size: 1rem;
-                            color: var(--font-color);
-                            margin: 10px 0 0 0;
-                        }
-                        i {
-                            font-size: 1.6rem;
-                            color: var(--primary-color);
-                            margin-left: 10px;
-                        }
-                        .webcon {
-                            margin-left: 0px;
-                        }
-                        a {
-                            margin-left: 100px;
-                            border-bottom: none;
-                            cursor: pointer;
-                            @media (max-width: 768px) {
-                                margin-left: 65px;
-                            }
-                            &:hover {
-                                i {
-                                    transform: scale(1.2);
-                                    color: $blueSecondary;
-                                    transition: .2s;
-                                }
-                            }
-                        }
-                    }
-                }
-                .hiden-container {
-                    display: none;
-                    padding: 0 20px;
+        }
+        .line:last-child {
+            margin-left: 100px;
+            width: 0%;
+            height: 2px;
+            background: var(--heading-color);
+            position: relative;
+            @media (max-width: 1024px) {
+                margin: 0;
+            }
+        }
+    }
+    .link {
+        @include flex(center,
+        center);
+        padding-bottom: 20px;
+        a {
+            text-decoration: none;
+            border-bottom: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            &:hover {
+                color: var(--font-color);
+                transition: $transition;
+                i {
+                    transform: scale(1.4);
+                    color: $blueSecondary;
+                    transition: .2s;
                 }
             }
         }
+        i {
+            font-size: 1.5rem;
+        }
+    }
+    .container {
+        @include flex(space-between,
+        stretch);
+        article {
+            @include flex(space-between,
+            center);
+            background: var(--bg-color-2);
+            padding: 20px;
+            flex-direction: column;
+            flex: 0 0 32%;
+            margin-bottom: 20px;
+            @media (max-width: 768px) {
+                flex: 0 0 100%;
+            }
+            img {
+                width: 100%;
+                border: 3px solid $darkBlue;
+            }
+            .icons {
+                @include flex(flex-start,
+                center);
+                padding: 10px;
+                width: 100%;
+                i {
+                    font-size: 1.5rem;
+                    color: $blueSecondary;
+                }
+                .fa-php {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+                svg {
+                    width: 30px;
+                    fill: $blueSecondary;
+                    margin-left: 5px;
+                }
+            }
+            h3 {
+                font-size: 1.7rem;
+                color: var(--heading-color-2);
+                margin-top: 20px;
+                text-align: center;
+            }
+            p {
+                font-size: 1rem;
+                color: var(--font-color);
+                margin: 10px 0 0 0;
+            }
+            i {
+                font-size: 1.6rem;
+                color: var(--primary-color);
+                margin-left: 10px;
+            }
+            .webcon {
+                margin-left: 0px;
+            }
+            a {
+                margin-left: 100px;
+                border-bottom: none;
+                cursor: pointer;
+                @media (max-width: 768px) {
+                    margin-left: 65px;
+                }
+                &:hover {
+                    i {
+                        transform: scale(1.2);
+                        color: $blueSecondary;
+                        transition: .2s;
+                    }
+                }
+            }
+        }
+    }
+    .hiden-container {
+        display: none;
+        padding: 0 20px;
     }
 }
 
@@ -683,6 +695,29 @@ header {
     animation: languageEffect 1.5s forwards ease-out;
 }
 
+.drawline {
+    width: 0%;
+    height: 2px;
+    background: var(--heading-color);
+    position: relative;
+    animation: draw-line 1s linear forwards;
+}
+
+@keyframes draw-line {
+    0% {
+        width: 0;
+        box-shadow: none;
+    }
+    50% {
+        width: 40%;
+        // box-shadow: 0px -1px 2px 0px var(--font-color);
+    }
+    100% {
+        width: 30%;
+        box-shadow: 0px 0px 4px 0px var(--font-color);
+    }
+}
+
 .skills {
     padding: 20px 0;
     margin-top: 100px;
@@ -692,45 +727,45 @@ header {
         text-align: center;
         display: block;
         position: relative;
-        top: 50px;
+        top: 29px;
         @media (max-width: 768px) {
-            top: 37px;
+            top: 22px;
         }
-        @media (max-width: 500px) {
-            top: 28px;
-        }
-        @media (max-width: 400px) {
-            top: 32px;
+        @media (max-width: 480px) {
+            top: 16px;
         }
     }
-    // .path-wrap {
-    // filter: drop-shadow(0px 0px 3px var(--font-color));
-    // .clip-path {
-    // background: var(--heading-color);
-    // clip-path: polygon(28% 8%, 72% 8%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-    // padding-top: 2px;
-    // @media (max-width: 768px) {
-    // clip-path: polygon(28% 4%, 72% 4%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-    // }
-    // @media (max-width: 500px) {
-    // clip-path: polygon(28% 2%, 72% 2%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-    // }
-    // .clip-path-container {
-    // background: var(--bg-color);
-    // padding: 110px 0 20px 0;
-    // clip-path: polygon(28% 8%, 72% 8%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
-    // @media (max-width: 768px) {
-    // clip-path: polygon(28% 4%, 72% 4%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-    // }
-    // @media (max-width: 500px) {
-    // clip-path: polygon(28% 2%, 72% 2%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-    // }
+    .lines {
+        @include flex(space-between,
+        center);
+        .line:first-child {
+            margin-right: 100px;
+            width: 0%;
+            height: 2px;
+            background: var(--heading-color);
+            position: relative;
+            @media (max-width: 1024px) {
+                margin: 0;
+            }
+        }
+        .line:last-child {
+            margin-left: 100px;
+            width: 0%;
+            height: 2px;
+            background: var(--heading-color);
+            position: relative;
+            @media (max-width: 1024px) {
+                margin: 0;
+            }
+        }
+    }
     .container {
         @include flex(space-around,
         center);
         background: var(--bg-color-2);
-        padding: 110px 0 20px 0;
+        padding: 0px 0 20px 0;
         margin-bottom: 20px;
+        margin-top: 100px;
         article:nth-child(1) {
             flex: 0 0 30%;
             .graphic {
@@ -740,9 +775,13 @@ header {
                 flex-wrap: wrap;
                 flex-direction: column;
                 svg {
-                    @media (min-width: 1600px) {
+                    @media (min-width: 1700px) {
                         width: 440px;
                         height: 440px;
+                    }
+                    @media (min-width: 2700px) {
+                        width: 580px;
+                        height: 580px;
                     }
                 }
                 .language {
@@ -770,9 +809,13 @@ header {
                 flex-wrap: wrap;
                 flex-direction: column;
                 svg {
-                    @media (min-width: 1600px) {
+                    @media (min-width: 1700px) {
                         width: 440px;
                         height: 440px;
+                    }
+                    @media (min-width: 2700px) {
+                        width: 580px;
+                        height: 580px;
                     }
                 }
                 .language {
@@ -800,9 +843,13 @@ header {
                 flex-wrap: wrap;
                 flex-direction: column;
                 svg {
-                    @media (min-width: 1600px) {
+                    @media (min-width: 1700px) {
                         width: 440px;
                         height: 440px;
+                    }
+                    @media (min-width: 2700px) {
+                        width: 580px;
+                        height: 580px;
                     }
                 }
                 .language {
@@ -853,9 +900,6 @@ header {
             }
         }
     }
-    // }
-    // }
-    // }
 }
 
 //profile
@@ -868,75 +912,78 @@ header {
         text-align: center;
         display: block;
         position: relative;
-        top: 50px;
+        top: 29px;
         @media (max-width: 768px) {
-            top: 37px;
+            top: 22px;
+        }
+        @media (max-width: 480px) {
+            top: 16px;
         }
     }
-    .path-wrap {
-        filter: drop-shadow(0px 0px 3px var(--font-color));
-        .clip-path {
+    .lines {
+        @include flex(space-between,
+        center);
+        .line:first-child {
+            margin-right: 100px;
+            width: 0%;
+            height: 2px;
             background: var(--heading-color);
-            clip-path: polygon(28% 11%, 72% 11%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-            padding-top: 2px;
+            position: relative;
+            @media (max-width: 1024px) {
+                margin: 0;
+            }
+        }
+        .line:last-child {
+            margin-left: 100px;
+            width: 0%;
+            height: 2px;
+            background: var(--heading-color);
+            position: relative;
+            @media (max-width: 1024px) {
+                margin: 0;
+            }
+        }
+    }
+    .container {
+        // @include flex(center,
+        // center);
+        article {
+            @include flex(space-between,
+            center);
+            background: var(--bg-color-2);
+            padding: 20px;
+            margin: 0 auto 20px;
             @media (max-width: 768px) {
-                clip-path: polygon(28% 6%, 72% 6%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+                width: 100%;
             }
-            @media (max-width: 500px) {
-                clip-path: polygon(28% 5%, 72% 5%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-            }
-            .clip-path-container {
-                background: var(--bg-color);
-                clip-path: polygon(28% 11%, 72% 11%, 74% 0%, 100% 0, 100% 100%, 0 100%, 0 0, 26% 0%);
+            .image {
+                flex: 0 0 35%;
+                padding: 15px;
                 @media (max-width: 768px) {
-                    clip-path: polygon(28% 6%, 72% 6%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
+                    flex: 0 0 70%;
+                    margin: 0 auto;
                 }
-                @media (max-width: 500px) {
-                    clip-path: polygon(28% 5%, 72% 5%, 74% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 26% 0%);
-                }
-                .container {
-                    // @include flex(center,
-                    // center);
-                    article {
-                        @include flex(space-between,
-                        center);
-                        background: var(--bg-color-2);
-                        padding: 20px;
-                        margin: 0 auto 20px;
-                        @media (max-width: 768px) {
-                            width: 100%;
-                        }
-                        .image {
-                            flex: 0 0 35%;
-                            padding: 15px;
-                            @media (max-width: 768px) {
-                                flex: 0 0 70%;
-                                margin: 0 auto;
-                            }
-                            img {
-                                // border: 8px solid $blueSecondary;
-                                border-radius: 50%;
-                                box-shadow: 0px 0px 0px 4px $blueSecondary;
-                                transition: box-shadow 0.3s linear;
-                                filter: grayscale(70%);
-                                margin: 0.5em;
-                                width: 100%;
-                                &:hover {
-                                    box-shadow: 0px 0px 0px 9px $blueSecondary;
-                                    filter: grayscale(0%);
-                                }
-                            }
-                        }
-                        .text {
-                            padding: 50px 20px 20px 20px;
-                            flex: 0 0 60%;
-                            letter-spacing: 1px;
-                            text-align: center;
-                            @media (max-width: 768px) {
-                                flex: 0 0 100%;
-                            }
-                        }
+                img {
+                    // border: 8px solid $blueSecondary;
+                    border-radius: 50%;
+                    box-shadow: 0px 0px 0px 4px $blueSecondary;
+                    transition: box-shadow 0.3s linear;
+                    filter: grayscale(70%);
+                    margin: 0.5em;
+                    width: 100%;
+                    &:hover {
+                        box-shadow: 0px 0px 0px 9px $blueSecondary;
+                        filter: grayscale(0%);
                     }
+                }
+            }
+            .text {
+                padding: 50px 20px 20px 20px;
+                flex: 0 0 60%;
+                letter-spacing: 1px;
+                text-align: center;
+                @media (max-width: 768px) {
+                    flex: 0 0 100%;
                 }
             }
         }
@@ -946,16 +993,50 @@ header {
 
 /*** footer ***/
 
+.lines-footer {
+    @include flex(space-between,
+    center);
+    .line-footer {
+        width: 0%;
+        height: 2px;
+        background: var(--heading-color);
+        position: relative;
+    }
+}
+
+.drawlineFooter {
+    width: 0%;
+    height: 2px;
+    background: var(--heading-color);
+    position: relative;
+    animation: draw-line-footer 1s linear forwards;
+}
+
+@keyframes draw-line-footer {
+    0% {
+        width: 0;
+        box-shadow: none;
+    }
+    100% {
+        width: 50%;
+        box-shadow: 0px 0px 4px 0px var(--font-color);
+    }
+}
+
 footer {
-    @include flex(space-around,
+    @include flex(space-between,
     center);
     padding: 50px;
     background: var(--bg-color);
-    @media (max-width: 768px) {
-        padding: 40px 20px;
+    @media (max-width: 1024px) {
+        padding: 20px;
     }
     .logodiv {
         display: flex;
+        flex: 0 0 18%;
+        @media (max-width: 1024px) {
+            flex: 0 0 35%;
+        }
         .logo {
             border-bottom: none;
             transition: 0.3s;
@@ -982,11 +1063,37 @@ footer {
             }
         }
     }
+    .copyright {
+        border-left: 1px solid var(--font-color);
+        border-right: 1px solid var(--font-color);
+        padding: 20px;
+        flex: 0 0 38%;
+        @media (max-width: 1024px) {
+            order: 2;
+            flex: 0 0 100%;
+            border-left: none;
+            border-right: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1rem;
+            text-indent: 0;
+        }
+        a {
+            font-size: 1rem;
+            &:hover {
+                text-decoration: none;
+                border-bottom: none;
+            }
+        }
+    }
     .iconsdiv {
         @include flex(space-around,
         center);
-        @media (max-width: 768px) {
-            flex-direction: column;
+        flex: 0 0 38%;
+        @media (max-width: 1024px) {
+            flex: 0 0 55%;
         }
         a {
             font-size: 3rem;
@@ -994,7 +1101,6 @@ footer {
             transition: $transition;
             cursor: pointer;
             border: none;
-            margin: 0 20px;
             @media (max-width: 768px) {
                 font-size: 2rem;
             }
