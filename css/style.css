@@ -223,7 +223,7 @@ nav .menu {
   align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav .menu {
     padding: 20px;
   }
@@ -232,7 +232,7 @@ nav .menu ul {
   display: flex;
   margin-top: 5px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav .menu ul {
     flex-direction: column;
     align-items: center;
@@ -263,7 +263,7 @@ nav .menu .theme-switch-wrapper {
   display: flex;
   align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav .menu .theme-switch-wrapper {
     float: right;
   }
@@ -316,7 +316,7 @@ nav .menu .theme-switch-wrapper .theme-switch .click.round:before {
 nav .bars {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav .bars {
     display: flex;
     align-items: center;
@@ -343,18 +343,23 @@ nav .bars-open .bar:nth-child(3) {
   transition: transform 0.2s ease-in-out;
   transform: rotate(-45deg) translate(6.5px, -6.5px);
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav .menu {
     display: none;
     background: var(--bg-color);
     position: absolute;
-    top: 63px;
+    top: 72px;
     left: 0;
     width: 100%;
     z-index: 1;
   }
 }
-@media (min-width: 769px) {
+@media (max-width: 768px) {
+  nav .menu {
+    top: 63px;
+  }
+}
+@media (min-width: 1025px) {
   nav .menu {
     display: flex !important;
   }
@@ -595,6 +600,7 @@ header h2 {
   font-size: 1rem;
   color: var(--font-color);
   margin: 10px 0 0 0;
+  text-align: center;
 }
 .projects .container article i {
   font-size: 1.6rem;
@@ -604,10 +610,14 @@ header h2 {
 .projects .container article .webcon {
   margin-left: 0px;
 }
+.projects .container article span {
+  align-self: flex-start;
+}
 .projects .container article a {
   margin-left: 100px;
   border-bottom: none;
   cursor: pointer;
+  align-self: flex-end;
 }
 @media (max-width: 768px) {
   .projects .container article a {
@@ -800,8 +810,8 @@ header h2 {
 }
 @media (min-width: 2700px) {
   .skills .container article:nth-child(1) .graphic svg {
-    width: 580px;
-    height: 580px;
+    width: 635px;
+    height: 635px;
   }
 }
 .skills .container article:nth-child(1) .graphic .language {
@@ -836,8 +846,8 @@ header h2 {
 }
 @media (min-width: 2700px) {
   .skills .container article:nth-child(2) .graphic svg {
-    width: 580px;
-    height: 580px;
+    width: 635px;
+    height: 635px;
   }
 }
 .skills .container article:nth-child(2) .graphic .language {
@@ -872,8 +882,8 @@ header h2 {
 }
 @media (min-width: 2700px) {
   .skills .container article:nth-child(3) .graphic svg {
-    width: 580px;
-    height: 580px;
+    width: 635px;
+    height: 635px;
   }
 }
 .skills .container article:nth-child(3) .graphic .language {
@@ -1012,7 +1022,7 @@ header h2 {
   box-shadow: 0px 0px 0px 4px #0677ff;
   transition: box-shadow 0.3s linear;
   filter: grayscale(70%);
-  margin: 0.5em;
+  margin: 5px;
   width: 100%;
 }
 .profile .container article .image img:hover {
@@ -1028,6 +1038,11 @@ header h2 {
 @media (max-width: 768px) {
   .profile .container article .text {
     flex: 0 0 100%;
+  }
+}
+@media (max-width: 480px) {
+  .profile .container article .text {
+    padding: 50px 0 20px 0;
   }
 }
 
@@ -1068,49 +1083,28 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 50px;
+  padding: 50px 50px 30px 50px;
   background: var(--bg-color);
 }
 @media (max-width: 1024px) {
   footer {
-    padding: 20px;
+    padding: 50px 12px 12px 12px;
   }
 }
 footer .logodiv {
   display: flex;
-  flex: 0 0 18%;
-}
-@media (max-width: 1024px) {
-  footer .logodiv {
-    flex: 0 0 35%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex: 0 0 15%;
 }
 footer .logodiv .logo {
   border-bottom: none;
-  transition: 0.3s;
-  height: 0;
-}
-footer .logodiv .logo::after {
-  content: "Dejan Lukić";
-  display: block;
-  position: relative;
-  font-family: "Nova Square", cursive;
-  color: var(--heading-color);
-  left: 38px;
-  font-size: 1.7rem;
-  font-weight: 100;
-  bottom: 57px;
-}
-@media (max-width: 768px) {
-  footer .logodiv .logo::after {
-    font-size: 1rem;
-    bottom: 50px;
-  }
 }
 footer .logodiv .logo svg {
-  bottom: 25px;
-  height: 50px;
-  position: relative;
+  height: 80px;
+  width: 60px;
 }
 footer .copyright {
   border-left: 1px solid var(--font-color);
@@ -1125,7 +1119,8 @@ footer .copyright {
     border-left: none;
     border-right: none;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 0;
   }
 }
 footer .copyright p {
@@ -1148,7 +1143,7 @@ footer .iconsdiv {
 }
 @media (max-width: 1024px) {
   footer .iconsdiv {
-    flex: 0 0 55%;
+    flex: 0 0 70%;
   }
 }
 footer .iconsdiv a {

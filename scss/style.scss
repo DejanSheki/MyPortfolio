@@ -237,13 +237,13 @@ nav {
     .menu {
         @include flex(space-between,
         center);
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             padding: 20px;
         }
         ul {
             display: flex;
             margin-top: 5px;
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 flex-direction: column;
                 align-items: center;
             }
@@ -272,7 +272,7 @@ nav {
         .theme-switch-wrapper {
             display: flex;
             align-items: center;
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 float: right;
             }
             em {
@@ -324,7 +324,7 @@ nav {
     }
     .bars {
         display: none;
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -353,16 +353,19 @@ nav {
         }
     }
     .menu {
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             display: none;
             background: var(--bg-color);
             position: absolute;
-            top: 63px;
+            top: 72px;
             left: 0;
             width: 100%;
             z-index: 1;
         }
-        @media (min-width:769px) {
+        @media (max-width: 768px) {
+            top: 63px;
+        }
+        @media (min-width:1025px) {
             display: flex !important;
         }
     }
@@ -583,6 +586,7 @@ header {
                 font-size: 1rem;
                 color: var(--font-color);
                 margin: 10px 0 0 0;
+                text-align: center;
             }
             i {
                 font-size: 1.6rem;
@@ -592,10 +596,14 @@ header {
             .webcon {
                 margin-left: 0px;
             }
+            span {
+                align-self: flex-start;
+            }
             a {
                 margin-left: 100px;
                 border-bottom: none;
                 cursor: pointer;
+                align-self: flex-end;
                 @media (max-width: 768px) {
                     margin-left: 65px;
                 }
@@ -780,8 +788,8 @@ header {
                         height: 440px;
                     }
                     @media (min-width: 2700px) {
-                        width: 580px;
-                        height: 580px;
+                        width: 635px;
+                        height: 635px;
                     }
                 }
                 .language {
@@ -814,8 +822,8 @@ header {
                         height: 440px;
                     }
                     @media (min-width: 2700px) {
-                        width: 580px;
-                        height: 580px;
+                        width: 635px;
+                        height: 635px;
                     }
                 }
                 .language {
@@ -848,8 +856,8 @@ header {
                         height: 440px;
                     }
                     @media (min-width: 2700px) {
-                        width: 580px;
-                        height: 580px;
+                        width: 635px;
+                        height: 635px;
                     }
                 }
                 .language {
@@ -964,12 +972,11 @@ header {
                     margin: 0 auto;
                 }
                 img {
-                    // border: 8px solid $blueSecondary;
                     border-radius: 50%;
                     box-shadow: 0px 0px 0px 4px $blueSecondary;
                     transition: box-shadow 0.3s linear;
                     filter: grayscale(70%);
-                    margin: 0.5em;
+                    margin: 5px;
                     width: 100%;
                     &:hover {
                         box-shadow: 0px 0px 0px 9px $blueSecondary;
@@ -984,6 +991,9 @@ header {
                 text-align: center;
                 @media (max-width: 768px) {
                     flex: 0 0 100%;
+                }
+                @media (max-width: 480px) {
+                    padding: 50px 0 20px 0;
                 }
             }
         }
@@ -1026,40 +1036,21 @@ header {
 footer {
     @include flex(space-between,
     center);
-    padding: 50px;
+    padding: 50px 50px 30px 50px;
     background: var(--bg-color);
     @media (max-width: 1024px) {
-        padding: 20px;
+        padding: 50px 12px 12px 12px;
     }
     .logodiv {
         display: flex;
-        flex: 0 0 18%;
-        @media (max-width: 1024px) {
-            flex: 0 0 35%;
-        }
+        @include flex(center,
+        baseline);
+        flex: 0 0 15%;
         .logo {
             border-bottom: none;
-            transition: 0.3s;
-            height: 0;
-            &::after {
-                content: "Dejan Lukić";
-                display: block;
-                position: relative;
-                font-family: $fontFamily2;
-                color: var(--heading-color);
-                left: 38px;
-                font-size: 1.7rem;
-                font-weight: 100;
-                bottom: 57px;
-                @media (max-width: 768px) {
-                    font-size: 1rem;
-                    bottom: 50px;
-                }
-            }
             svg {
-                bottom: 25px;
-                height: 50px;
-                position: relative;
+                height: 80px;
+                width: 60px;
             }
         }
     }
@@ -1074,7 +1065,8 @@ footer {
             border-left: none;
             border-right: none;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
+            padding: 0;
         }
         p {
             font-size: 1rem;
@@ -1093,7 +1085,7 @@ footer {
         center);
         flex: 0 0 38%;
         @media (max-width: 1024px) {
-            flex: 0 0 55%;
+            flex: 0 0 70%;
         }
         a {
             font-size: 3rem;
