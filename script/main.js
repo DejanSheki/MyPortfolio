@@ -43,6 +43,21 @@ $(function() {
 
 });
 
+//add class active on click
+
+document.addEventListener('click', function() {
+
+    if (!event.target.classList.contains('nav-link')) return;
+    event.target.classList.add('active');
+
+    var links = document.querySelectorAll('.nav-link');
+
+    for (var i = 0; i < links.length; i++) {
+
+        if (links[i] === event.target) continue;
+        links[i].classList.remove('active');
+    }
+}, false);
 
 //dark/light
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -86,46 +101,46 @@ $(document).ready(function() {
 });
 
 //add active class
-$(document).ready(function() {
-    $(document).on('scroll', onScroll);
+// $(document).ready(function() {
+//     $(document).on('scroll', onScroll);
 
-    //smoothscroll
-    $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        $(document).off('scroll');
+//     //smoothscroll
+//     $('a[href^="#"]').on('click', function(e) {
+//         e.preventDefault();
+//         $(document).off('scroll');
 
-        $('a').each(function() {
-            $(this).removeClass('active');
-        })
-        $(this).addClass('active');
+//         $('a').each(function() {
+//             $(this).removeClass('active');
+//         })
+//         $(this).addClass('active');
 
-        var target = this.hash,
-            menu = target;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 0, 'swing', function() {
-            window.location.hash = target;
-            $(document).on('scroll', onScroll);
-        });
-    });
-});
+//         var target = this.hash,
+//             menu = target;
+//         $target = $(target);
+//         $('html, body').stop().animate({
+//             'scrollTop': $target.offset().top
+//         }, 0, 'swing', function() {
+//             window.location.hash = target;
+//             $(document).on('scroll', onScroll);
+//         });
+//     });
+// });
 
 // Use Class or ID For Selection 
 
-function onScroll(event) {
-    var scrollPos = $(document).scrollTop() + 250;
-    $('.menu ul li a').each(function() {
-        var currLink = $(this);
-        var refElement = $(currLink.attr('href'));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() + 200 > scrollPos) {
-            $('.menu ul li a').removeClass('active');
-            currLink.addClass('active');
-        } else {
-            currLink.removeClass('active');
-        }
-    });
-}
+// function onScroll(event) {
+//     var scrollPos = $(document).scrollTop() + 250;
+//     $('.menu ul li a').each(function() {
+//         var currLink = $(this);
+//         var refElement = $(currLink.attr('href'));
+//         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() + 200 > scrollPos) {
+//             $('.menu ul li a').removeClass('active');
+//             currLink.addClass('active');
+//         } else {
+//             currLink.removeClass('active');
+//         }
+//     });
+// }
 
 //show morw - show less
 
@@ -147,3 +162,22 @@ function showMore() {
 }
 
 btnText.addEventListener('click', showMore);
+
+const btnText2 = document.getElementById('myBtn2');
+const hidenContainer2 = document.querySelector('.hiden-container');
+
+function showMore2() {
+    if (btnText2.innerText === 'Još projekata ') {
+
+        hidenContainer2.classList.remove('hiden-container');
+        hidenContainer2.classList.add('show-container');
+        btnText2.innerHTML = 'Manje projekata <i class="far fa-hand-point-up"></i>';
+    } else if (btnText2.innerText === 'Manje projekata ') {
+
+        hidenContainer2.classList.add('hiden-container');
+        hidenContainer2.classList.remove('show-container');
+        btnText2.innerHTML = 'Još projekata <i class="far fa-hand-point-down"></i>';
+    }
+}
+
+btnText2.addEventListener('click', showMore2);

@@ -97,6 +97,10 @@ a {
     }
 }
 
+.hide {
+    display: none !important;
+}
+
 
 /** preload **/
 
@@ -318,6 +322,16 @@ nav {
                 }
                 .click.round:before {
                     border-radius: 50%;
+                }
+            }
+        }
+        .change-language {
+            margin-left: 10px;
+            a {
+                cursor: pointer;
+                border-bottom: none;
+                &:hover {
+                    border-bottom: none;
                 }
             }
         }
@@ -550,8 +564,12 @@ header {
             flex-direction: column;
             flex: 0 0 32%;
             margin-bottom: 20px;
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 flex: 0 0 100%;
+                padding: 45px;
+            }
+            @media (max-width: 480px) {
+                padding: 15px;
             }
             img {
                 width: 100%;
@@ -560,7 +578,7 @@ header {
             .icons {
                 @include flex(flex-start,
                 center);
-                padding: 10px;
+                padding: 10px 0;
                 width: 100%;
                 i {
                     font-size: 1.5rem;
@@ -598,15 +616,12 @@ header {
             }
             span {
                 align-self: flex-start;
+                margin-top: 15px;
             }
             a {
-                margin-left: 100px;
                 border-bottom: none;
                 cursor: pointer;
                 align-self: flex-end;
-                @media (max-width: 768px) {
-                    margin-left: 65px;
-                }
                 &:hover {
                     i {
                         transform: scale(1.2);

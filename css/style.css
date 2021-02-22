@@ -80,6 +80,10 @@ a:hover {
   }
 }
 
+.hide {
+  display: none !important;
+}
+
 /** preload **/
 .preload {
   display: flex;
@@ -312,6 +316,16 @@ nav .menu .theme-switch-wrapper .theme-switch .click.round {
 }
 nav .menu .theme-switch-wrapper .theme-switch .click.round:before {
   border-radius: 50%;
+}
+nav .menu .change-language {
+  margin-left: 10px;
+}
+nav .menu .change-language a {
+  cursor: pointer;
+  border-bottom: none;
+}
+nav .menu .change-language a:hover {
+  border-bottom: none;
 }
 nav .bars {
   display: none;
@@ -560,9 +574,15 @@ header h2 {
   flex: 0 0 32%;
   margin-bottom: 20px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .projects .container article {
     flex: 0 0 100%;
+    padding: 45px;
+  }
+}
+@media (max-width: 480px) {
+  .projects .container article {
+    padding: 15px;
   }
 }
 .projects .container article img {
@@ -574,7 +594,7 @@ header h2 {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 10px 0;
   width: 100%;
 }
 .projects .container article .icons i {
@@ -612,17 +632,12 @@ header h2 {
 }
 .projects .container article span {
   align-self: flex-start;
+  margin-top: 15px;
 }
 .projects .container article a {
-  margin-left: 100px;
   border-bottom: none;
   cursor: pointer;
   align-self: flex-end;
-}
-@media (max-width: 768px) {
-  .projects .container article a {
-    margin-left: 65px;
-  }
 }
 .projects .container article a:hover i {
   transform: scale(1.2);
