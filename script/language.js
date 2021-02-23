@@ -3,14 +3,12 @@ var english = document.getElementById('en_click');
 var sr_txt = document.querySelectorAll('.sr');
 var en_txt = document.querySelectorAll('.en');
 
-
 serbian.addEventListener('click', function() {
     serbian.classList.add('active');
     english.classList.remove('active');
     for (var i = 0; i < sr_txt.length; i++) {
 
         if (sr_txt[i].classList.contains('hide')) {
-            console.log(sr_txt[i].className);
             sr_txt[i].classList.remove('hide')
         }
     }
@@ -34,25 +32,47 @@ english.addEventListener('click', function() {
 });
 
 
-// (function() {
-//     'use strict';
 
-//     var section = document.querySelectorAll(".section");
-//     var sections = {};
-//     var i = 0;
+// function addActiveClass() {
+//     var elements = document.querySelectorAll('.link-href'),
+//         positions = [];
 
-//     Array.prototype.forEach.call(section, function(e) {
-//         sections[e.id] = e.offsetTop;
+//     Array.prototype.forEach.call(elements, function(el, index) {
+//         var positionInfo = el.getBoundingClientRect();
+//         var appearPosition = positionInfo.top;
+
+//         positions.push(appearPosition);
+
 //     });
 
-//     window.onscroll = function() {
-//         var scrollPosition = document.documentElement.scrollTop + 300;
+//     for (var i = 0; i < elements.length; i++) {
+//         var screenPosition = window.innerHeight / 1.2;
+//         var home = document.querySelectorAll('.home1');
+//         var homeArr = Array.from(home);
+//         // console.log(homeArr);
+//         // console.log(home);
+//         if (elements[i].getBoundingClientRect().top < screenPosition) {
+//             // console.log(elements[i].attributes[0].nodeValue);
 
-//         for (i in sections) {
-//             if (sections[i] <= scrollPosition) {
-//                 document.querySelector('.active').setAttribute('class', ' ');
-//                 document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
-//             }
 //         }
-//     };
-// })();
+//         if (elements[i].attributes[0].nodeValue == 'home') {
+//             homeArr.forEach(function(node, idx) {
+
+//                 homeArr.classList.add('active');
+
+//                 // console.log();
+//             });
+//             // console.log(homeArr);
+
+//             for (var j = 0; j < homeArr.length; j++) {
+//                 // home.classList.add('active');
+//                 // console.log(home);
+
+//             }
+//         } else {
+//             // home.classList.remove('active');
+//         }
+//     }
+// }
+
+// window.addEventListener('scroll', addActiveClass);

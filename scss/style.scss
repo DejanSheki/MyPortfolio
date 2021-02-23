@@ -198,7 +198,11 @@ a {
 }
 
 .active {
-    color: var(--heading-color);
+    color: var(--heading-color) !important;
+}
+
+.menu-open {
+    transform: translateX(0) !important;
 }
 
 nav {
@@ -243,6 +247,20 @@ nav {
         center);
         @media (max-width: 1024px) {
             padding: 20px;
+            @include flex(space-around,
+            center);
+            transform: translateX(-100%);
+            transition: transform 1s ease;
+            background: var(--bg-color);
+            position: absolute;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            top: 63px;
         }
         ul {
             display: flex;
@@ -250,11 +268,15 @@ nav {
             @media (max-width: 1024px) {
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
             }
             li {
                 display: inline-block;
                 list-style: none;
                 padding: 5px 15px;
+                @media (max-width: 1024px) {
+                    margin-top: 15px;
+                }
                 &:hover::after {
                     width: 100%;
                     transition: width .8s;
@@ -326,13 +348,12 @@ nav {
             }
         }
         .change-language {
-            margin-left: 10px;
-            a {
+            margin-left: 20px;
+            @media (max-width: 1024px) {}
+            span {
+                color: var(--primary-color);
                 cursor: pointer;
-                border-bottom: none;
-                &:hover {
-                    border-bottom: none;
-                }
+                font-weight: 700;
             }
         }
     }
@@ -364,23 +385,6 @@ nav {
         .bar:nth-child(3) {
             transition: transform .2s ease-in-out;
             transform: rotate(-45deg) translate( 6.5px, -6.5px);
-        }
-    }
-    .menu {
-        @media (max-width: 1024px) {
-            display: none;
-            background: var(--bg-color);
-            position: absolute;
-            top: 72px;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-        }
-        @media (max-width: 768px) {
-            top: 63px;
-        }
-        @media (min-width:1025px) {
-            display: flex !important;
         }
     }
 }

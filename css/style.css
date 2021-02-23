@@ -174,7 +174,11 @@ a:hover {
 }
 
 .active {
-  color: var(--heading-color);
+  color: var(--heading-color) !important;
+}
+
+.menu-open {
+  transform: translateX(0) !important;
 }
 
 nav {
@@ -230,6 +234,24 @@ nav .menu {
 @media (max-width: 1024px) {
   nav .menu {
     padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    transform: translateX(-100%);
+    transition: transform 1s ease;
+    background: var(--bg-color);
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+}
+@media (max-width: 768px) {
+  nav .menu {
+    top: 63px;
   }
 }
 nav .menu ul {
@@ -240,12 +262,18 @@ nav .menu ul {
   nav .menu ul {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 }
 nav .menu ul li {
   display: inline-block;
   list-style: none;
   padding: 5px 15px;
+}
+@media (max-width: 1024px) {
+  nav .menu ul li {
+    margin-top: 15px;
+  }
 }
 nav .menu ul li:hover::after {
   width: 100%;
@@ -318,14 +346,12 @@ nav .menu .theme-switch-wrapper .theme-switch .click.round:before {
   border-radius: 50%;
 }
 nav .menu .change-language {
-  margin-left: 10px;
+  margin-left: 20px;
 }
-nav .menu .change-language a {
+nav .menu .change-language span {
+  color: var(--primary-color);
   cursor: pointer;
-  border-bottom: none;
-}
-nav .menu .change-language a:hover {
-  border-bottom: none;
+  font-weight: 700;
 }
 nav .bars {
   display: none;
@@ -356,27 +382,6 @@ nav .bars-open .bar:nth-child(2) {
 nav .bars-open .bar:nth-child(3) {
   transition: transform 0.2s ease-in-out;
   transform: rotate(-45deg) translate(6.5px, -6.5px);
-}
-@media (max-width: 1024px) {
-  nav .menu {
-    display: none;
-    background: var(--bg-color);
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-  }
-}
-@media (max-width: 768px) {
-  nav .menu {
-    top: 63px;
-  }
-}
-@media (min-width: 1025px) {
-  nav .menu {
-    display: flex !important;
-  }
 }
 
 .jump {
