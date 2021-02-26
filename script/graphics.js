@@ -143,7 +143,7 @@ window.addEventListener('scroll', scrollanimateValuePhp, {
     passive: true
 });
 
-//language blinding on scroll
+//technologies blinding on scroll
 
 function scrollLanguageBlinding() {
     var elements = document.querySelectorAll('.language'),

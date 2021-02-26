@@ -5,19 +5,14 @@ $fontFamily2:'Nova Square',
 cursive;
 $transition: 1s ease;
 $fontSize: 16px;
-$blueSecondary: #0677ff;
-// $darkBlue:#0c0c21;
+$blueSecondary: #0073FF;
 $darkBlue:#060c0f;
 $grey: #c5c5c5;
 $grey-two: #b1b1b4;
 :root {
     --primary-color: #cad0f3;
-    // --secondary-color: #0a44e4;
     --font-color: #b1b1b4;
-    // --bg-color: #0c0c21;
-    // --bg-color: #141424;
     --bg-color: #060c0f;
-    // --bg-color-2: #141431;
     --bg-color-2: #0b1019;
     --heading-color: #0072fa;
     --heading-color-2: #9ea6d4;
@@ -48,10 +43,8 @@ $align) {
 }
 
 html {
-    scroll-padding-top: 280px;
-    @media (max-width: 480px) {
-        scroll-padding-top: 180px;
-    }
+    scroll-padding-top: 140px;
+    overflow: auto;
 }
 
 body {
@@ -118,14 +111,12 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #060c0f;
+    background: $darkBlue;
     z-index: 999;
     transition: opacity 1s ease-in-out 4s;
 }
 
 .preload-finish {
-    // transform: translateY(100%);
-    // width: 0;
     opacity: 0;
     pointer-events: none;
 }
@@ -134,7 +125,7 @@ a {
     stroke-dasharray: 800;
     stroke-dashoffset: 800;
     animation: preloadLogoVelika 3s ease-in forwards, preloadOpacity 4s ease-out forwards;
-    stroke: #0c47eb;
+    stroke: $blueSecondary;
     stroke-width: 2px;
     stroke-linecap: round;
 }
@@ -143,7 +134,7 @@ a {
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
     animation: preloadLogoMala 3s ease-in forwards, preloadOpacity 4s ease-out forwards;
-    stroke: #0c47eb;
+    stroke: $blueSecondary;
     stroke-width: 2px;
     stroke-linecap: round;
 }
@@ -201,7 +192,7 @@ a {
 }
 
 .active {
-    color: var(--heading-color) !important;
+    color: $blueSecondary !important;
 }
 
 .menu-open {
@@ -317,7 +308,7 @@ nav {
                     display: none;
                 }
                 .click {
-                    background-color: #586998;
+                    background-color: $blueSecondary;
                     bottom: 0;
                     cursor: pointer;
                     left: 0;
@@ -399,22 +390,17 @@ nav {
 }
 
 .jump-appear {
-    // transform: translateY(0%);
     animation: jumpApp 1s ease-out forwards .4s;
-    // transition: 1s ease-out;
 }
 
 @keyframes jumpApp {
     0% {
-        // transform: translateY(100%);
         transform: scale(0);
     }
     50% {
-        // transform: translateY(0%);
         transform: scale(1.2);
     }
     100% {
-        // transform: translateY(15%) scale(1.3);
         transform: scale(1);
         opacity: 1;
     }
@@ -461,8 +447,6 @@ header {
     }
     .welcome-text {
         font-size: 4.5rem;
-        // transform: translateX(500%);
-        // transition: transform 1.2s ease-in-out 4s;
         position: relative;
         z-index: -1;
         @media (max-width: 768px) {
@@ -471,8 +455,6 @@ header {
     }
     .welcome-text-d {
         font-size: 3rem;
-        // transform: translateX(-500%);
-        // transition: transform 1.2s ease-in-out 5s;
         position: relative;
         z-index: -1;
         @media (max-width: 768px) {
@@ -601,7 +583,7 @@ header {
                     margin-left: 5px;
                 }
             }
-            h3 {
+            h2 {
                 font-size: 1.7rem;
                 color: var(--heading-color-2);
                 margin-top: 20px;
@@ -975,8 +957,6 @@ header {
         }
     }
     .container {
-        // @include flex(center,
-        // center);
         article {
             @include flex(space-between,
             center);

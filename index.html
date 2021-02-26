@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dejan Lukić</title>
+    <title>Dejan Lukić | Web Developer | Web Designer</title>
+
+    <meta name="description" content="Dejan Lukic, freelancer, web developer and web designer.">
+    <meta name="keywords" content="Dejan Lukic, Web developer, web designer, web development, web design, HTML, CSS, JavaScript">
+    <meta name="Robots" content="Index, Follow">
+    <meta property="og:image" content="C:\MAMP\htdocs\myPortfolio-master\img\logo.svg">
+
     <script src="https://kit.fontawesome.com/08f9c1c78e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,14 +28,14 @@
         </div>
         <div class="menu">
             <ul>
-                <li class="en"><a class="nav-link" href="#home">Home</a></li>
-                <li class="en"><a class="nav-link" href="#projects">Projects</a></li>
-                <li class="en"><a class="nav-link" href="#skills">Skills</a></li>
-                <li class="en"><a class="nav-link" href="#profile">Profile</a></li>
-                <li class="sr hide"><a class="nav-link" href="#home">Početna</a></li>
-                <li class="sr hide"><a class="nav-link" href="#projekti">Projekti</a></li>
-                <li class="sr hide"><a class="nav-link" href="#vestine">Veštine</a></li>
-                <li class="sr hide"><a class="nav-link" href="#profil">Profil</a></li>
+                <li class="en"><a href="#home">Home</a></li>
+                <li class="en"><a href="#projects">Projects</a></li>
+                <li class="en"><a href="#skills">Skills</a></li>
+                <li class="en"><a href="#profile">Profile</a></li>
+                <li class="sr hide"><a href="#home">Početna</a></li>
+                <li class="sr hide"><a href="#projects">Projekti</a></li>
+                <li class="sr hide"><a href="#skills">Veštine</a></li>
+                <li class="sr hide"><a href="#profile">Profil</a></li>
             </ul>
             <div class="theme-switch-wrapper">
                 <em>Light!</em>
@@ -73,17 +79,17 @@
     </div>
 
     <!-- header -->
-    <header>
+    <header id="home">
         <div class="welcome">
-            <h1 id="home" class="welcome-text welcome-text-trans">Web development</h1>
+            <h1 class="welcome-text welcome-text-trans">Web development</h1>
             <h2 class="welcome-text-d welcome-text-d-trans"> and design</h2>
         </div>
     </header>
 
     <!-- projects-->
-    <section class="projects">
-        <h1 id="projects" class="en jump href-link-projects">Projects</h1>
-        <h1 id="projekti" class="sr hide jump href-link-projekti">Projekti</h1>
+    <section id="projects" class="projects">
+        <h1 class="en jump">Projects</h1>
+        <h1 class="sr hide jump">Projekti</h1>
         <div class="lines">
             <div class="line"></div>
             <div class="line"></div>
@@ -93,7 +99,7 @@
                 <div>
                     <img src="img/kolona.jpg" loading="lazy" alt="Konoba Kolona">
                 </div>
-                <h3>Konoba Kolona</h3>
+                <h2>Konoba Kolona</h2>
                 <p class="en">After successfully completing the PHP Web Development course, this was my first project to be uploaded to the server. I did everything from design, image processing, and coding, to buying a domain name, hosting, and SEO optimization.
                 </p>
                 <p class="sr hide">Posle završenog kursa za PHP Web Developera, prvi projekat koji je postavljen na server. Rađeno je sve od nule: dizajn, obrada slika, kodiranje, kupovina domena i hostinga, postavljenje na server kao i SEO podešavanja. </p>
@@ -119,8 +125,8 @@
                 <div>
                     <img src="img/funta.jpg" loading="lazy" alt="Menjacnica Funta">
                 </div>
-                <h3 class="en">Exchange office Funta</h3>
-                <h3 class="sr hide">Menjačnica Funta</h3>
+                <h2 class="en">Exchange office Funta</h2>
+                <h2 class="sr hide">Menjačnica Funta</h2>
                 <p class="en">My first commission job. Again, I was responsible for the design, image processing and coding, as well as buying the domain name, hosting, and uploading it to the server. The exchange rates are coming via API, processed through PHP, and
                     formed in a list. The effects are made without using the libraries.</p>
                 <p class="sr hide">Prvi ozbiljan posao, kao i kod predhodnog projekta, rađeno sve od dizajna do postavljanja na server. Podaci kursne liste se dobijaju preko API-ja, obrađuju kroz PHP i formiraju listu. Efekti su rađeni bez korišćenja biblioteka. </p><br><br>
@@ -146,7 +152,7 @@
                 <div>
                     <img src="img/portfolio.jpg" loading="lazy" alt="Portfolio vezba">
                 </div>
-                <h3>Portfolio</h3>
+                <h2>Portfolio</h2>
                 <p class="en">This project was part of the <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> online workshop. First, a web page was designed in a Photoshop Document (PSD) and then converted to code using HTML,
                     to which I added some changes.</p>
                 <p class="sr hide">Vežba u okviru <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> radionice. Jedan od mnogih projekata u okviru radionice, rađeno iz PSD u HTML, uz sitne promene.</p><br><br>
@@ -170,7 +176,7 @@
                 <div>
                     <img src="img/web.jpg" loading="lazy" alt="Busines">
                 </div>
-                <h3>Busines</h3>
+                <h2>Busines</h2>
                 <p class="en">Another project from the <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> online workshop, which I customized.</p>
                 <p class="sr hide">Jos jedna u nizu vežbi u okviru <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> radionica, uz poneku izmenu s moje strane.</p><br><br>
                 <span class="en">Technologies used &darr;</span>
@@ -191,7 +197,7 @@
                 <div>
                     <img src="img/houseworks.jpg" loading="lazy" alt="Houseworks">
                 </div>
-                <h3>House-works</h3>
+                <h2>House-works</h2>
                 <p class="en">Live coding during the <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> online workshop with the assistance of an experienced developer.</p>
                 <p class="sr hide">Kodiranje uživo na <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> radionici. Kopiranje templejta uz instrukcije iskusnog developera.</p><br><br>
                 <span class="en">Technologies used &darr;</span>
@@ -208,7 +214,7 @@
                 <div>
                     <img src="img/bloger.jpg" loading="lazy" alt="Bloger">
                 </div>
-                <h3>Bloger</h3>
+                <h2>Bloger</h2>
                 <p class="en">Live coding during the <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> online workshop with the assistance of an experienced developer.</p>
                 <p class="sr hide">Kodiranje uživo na <a class="webcon" href="https://webcon.rs/" target="_blank" rel="noreferrer">Webcon </a> radionici, uz instrukcije iskusnog developera.</p><br><br>
                 <span class="en">Technologies used &darr;</span>
@@ -231,9 +237,9 @@
         </div>
     </section>
     <!-- skills -->
-    <section class="skills">
-        <h1 id="skills" class="en jump href-link-skills">Skills</h1>
-        <h1 id="vestine" class="sr hide jump href-link-vestine">Veštine</h1>
+    <section id="skills" class="skills">
+        <h1 class="en jump">Skills</h1>
+        <h1 class="sr hide jump">Veštine</h1>
         <div class="lines">
             <div class="line"></div>
             <div class="line"></div>
@@ -459,9 +465,9 @@
     </section>
 
     <!-- profil -->
-    <section class="profile">
-        <h1 id="profile" class="en jump href-link-profile">Profile</h1>
-        <h1 id="profil" class="sr hide jump href-link-profil">Profil</h1>
+    <section id="profile" class="profile">
+        <h1 class="en jump">Profile</h1>
+        <h1 class="sr hide jump">Profil</h1>
         <div class="lines">
             <div class="line"></div>
             <div class="line"></div>
@@ -511,7 +517,6 @@
         </div>
     </footer>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
     <script src="script/main.js"></script>
     <script src="script/graphics.js"></script>
     <script src="script/language.js"></script>
