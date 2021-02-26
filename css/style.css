@@ -25,7 +25,12 @@
 }
 
 html {
-  scroll-padding-top: 140px;
+  scroll-padding-top: 280px;
+}
+@media (max-width: 480px) {
+  html {
+    scroll-padding-top: 180px;
+  }
 }
 
 body {
@@ -233,7 +238,7 @@ nav .menu {
 }
 @media (max-width: 1024px) {
   nav .menu {
-    padding: 20px;
+    padding: 20px 20px 130px 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;

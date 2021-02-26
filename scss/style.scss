@@ -48,7 +48,10 @@ $align) {
 }
 
 html {
-    scroll-padding-top: 140px;
+    scroll-padding-top: 280px;
+    @media (max-width: 480px) {
+        scroll-padding-top: 180px;
+    }
 }
 
 body {
@@ -246,7 +249,7 @@ nav {
         @include flex(space-between,
         center);
         @media (max-width: 1024px) {
-            padding: 20px;
+            padding: 20px 20px 130px 20px;
             @include flex(space-around,
             center);
             transform: translateX(-100%);

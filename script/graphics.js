@@ -4,7 +4,7 @@ function scrollAppear() {
     var elements = document.querySelectorAll('.graphics-appear'),
         positions = [];
 
-    Array.prototype.forEach.call(elements, function(el, index) {
+    Array.prototype.forEach.call(elements, function(el) {
         var positionInfo = el.getBoundingClientRect();
         var appearPosition = positionInfo.top;
 
@@ -24,13 +24,15 @@ function scrollAppear() {
         }
     }
 }
-window.addEventListener('scroll', scrollAppear, { passive: true });
+window.addEventListener('scroll', scrollAppear, {
+    passive: true
+});
 
 function scrollLineAppear() {
     var elements = document.querySelectorAll('.up-graphics-appear'),
         positions = [];
 
-    Array.prototype.forEach.call(elements, function(el, index) {
+    Array.prototype.forEach.call(elements, function(el) {
         var positionInfo = el.getBoundingClientRect();
         var appearPosition = positionInfo.top;
 
@@ -50,7 +52,9 @@ function scrollLineAppear() {
         }
     }
 }
-window.addEventListener('scroll', scrollLineAppear, { passive: true });
+window.addEventListener('scroll', scrollLineAppear, {
+    passive: true
+});
 
 
 //scroll heading jump
@@ -59,7 +63,7 @@ function scrollJumpAppear() {
     var elements = document.querySelectorAll('.jump'),
         positions = [];
 
-    Array.prototype.forEach.call(elements, function(el, index) {
+    Array.prototype.forEach.call(elements, function(el) {
         var positionInfo = el.getBoundingClientRect();
         var appearPosition = positionInfo.top;
 
@@ -77,12 +81,14 @@ function scrollJumpAppear() {
         }
     }
 }
-window.addEventListener('scroll', scrollJumpAppear, { passive: true });
+window.addEventListener('scroll', scrollJumpAppear, {
+    passive: true
+});
 
 //counting percent on scroll
 
 function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
+    var startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
@@ -107,7 +113,9 @@ function scrollanimateValue() {
         animateValue(obj, 0, 90, 1500);
     }
 }
-window.addEventListener('scroll', scrollanimateValue, { passive: true });
+window.addEventListener('scroll', scrollanimateValue, {
+    passive: true
+});
 
 function scrollanimateValueJs() {
     var element = document.querySelector('#value-js').getBoundingClientRect();
@@ -118,7 +126,9 @@ function scrollanimateValueJs() {
         animateValue(objJs, 0, 60, 1500);
     }
 }
-window.addEventListener('scroll', scrollanimateValueJs, { passive: true });
+window.addEventListener('scroll', scrollanimateValueJs, {
+    passive: true
+});
 
 function scrollanimateValuePhp() {
     var element = document.querySelector('#value-php').getBoundingClientRect();
@@ -129,7 +139,9 @@ function scrollanimateValuePhp() {
         animateValue(objPhp, 0, 55, 1500);
     }
 }
-window.addEventListener('scroll', scrollanimateValuePhp, { passive: true });
+window.addEventListener('scroll', scrollanimateValuePhp, {
+    passive: true
+});
 
 //language blinding on scroll
 
@@ -137,7 +149,7 @@ function scrollLanguageBlinding() {
     var elements = document.querySelectorAll('.language'),
         positions = [];
 
-    Array.prototype.forEach.call(elements, function(el, index) {
+    Array.prototype.forEach.call(elements, function(el) {
         var positionInfo = el.getBoundingClientRect();
         var appearPosition = positionInfo.top;
 
@@ -155,14 +167,16 @@ function scrollLanguageBlinding() {
         }
     }
 }
-window.addEventListener('scroll', scrollLanguageBlinding, { passive: true });
+window.addEventListener('scroll', scrollLanguageBlinding, {
+    passive: true
+});
 
 // draw lines
 function scrollDrawLines() {
     var elements = document.querySelectorAll('.line'),
         positions = [];
 
-    Array.prototype.forEach.call(elements, function(el, index) {
+    Array.prototype.forEach.call(elements, function(el) {
         var positionInfo = el.getBoundingClientRect();
         var appearPosition = positionInfo.top;
 
@@ -180,14 +194,16 @@ function scrollDrawLines() {
         }
     }
 }
-window.addEventListener('scroll', scrollDrawLines, { passive: true });
+window.addEventListener('scroll', scrollDrawLines, {
+    passive: true
+});
 
 
 function scrollDrawLinesFooter() {
     var elements = document.querySelectorAll('.line-footer'),
         positions = [];
 
-    Array.prototype.forEach.call(elements, function(el, index) {
+    Array.prototype.forEach.call(elements, function(el) {
         var positionInfo = el.getBoundingClientRect();
         var appearPosition = positionInfo.top;
 
@@ -205,4 +221,6 @@ function scrollDrawLinesFooter() {
         }
     }
 }
-window.addEventListener('scroll', scrollDrawLinesFooter, { passive: true });
+window.addEventListener('scroll', scrollDrawLinesFooter, {
+    passive: true
+});
