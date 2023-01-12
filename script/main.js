@@ -14,7 +14,7 @@ window.onload = function loadFrame() {
         wlctxd.classList.add("welcome-text-d-add");
         wlctxd.classList.remove("welcome-text-d-trans");
 
-    }, 4000)
+    }, 2000);
 };
 
 //hamburger
@@ -47,8 +47,6 @@ for (var i = 0; i < menuA.length; i++) {
 //dark/light
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 const currentTheme = localStorage.getItem('theme') || 'dark';
-
-let docStyle = getComputedStyle(document.documentElement);
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);

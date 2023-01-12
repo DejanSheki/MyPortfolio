@@ -1,0 +1,11 @@
+
+
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.dejanlukic.com [NC]
+RewriteRule ^(.*)$ http://dejanlukic.com/$1 [L,R=301,NC]
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

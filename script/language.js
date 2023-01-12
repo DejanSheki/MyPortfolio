@@ -9,7 +9,7 @@ serbian.addEventListener('click', function() {
     for (var i = 0; i < sr_txt.length; i++) {
 
         if (sr_txt[i].classList.contains('hide')) {
-            sr_txt[i].classList.remove('hide')
+            sr_txt[i].classList.remove('hide');
         }
     }
     for (var j = 0; j < en_txt.length; j++) {
@@ -23,7 +23,7 @@ english.addEventListener('click', function() {
     for (var i = 0; i < en_txt.length; i++) {
 
         if (en_txt[i].classList.contains('hide')) {
-            en_txt[i].classList.remove('hide')
+            en_txt[i].classList.remove('hide');
         }
     }
     for (var j = 0; j < sr_txt.length; j++) {
